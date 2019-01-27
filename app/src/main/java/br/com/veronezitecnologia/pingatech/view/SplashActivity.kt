@@ -1,8 +1,6 @@
 package br.com.veronezitecnologia.pingatech.view
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -18,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        showSplash()
+         showSplash()
 
 //        val preferences = getSharedPreferences("user_preferences", Context.MODE_PRIVATE)
 //        val isFirstOpen = preferences.getBoolean("open_first", true)
@@ -32,14 +30,14 @@ class SplashActivity : AppCompatActivity() {
 //        }
     }
 
-    private fun markAppAlreadyOpen(preferences: SharedPreferences) {
-        val editor = preferences.edit()
-        editor.putBoolean("open_first", false)
-        editor.apply()
-    }
+//    private fun markAppAlreadyOpen(preferences: SharedPreferences) {
+//        val editor = preferences.edit()
+//        editor.putBoolean("open_first", false)
+//        editor.apply()
+//    }
 
     private fun showLogin() {
-        val nextScreen = Intent(this@SplashActivity, MainActivity::class.java)
+        val nextScreen = Intent(this@SplashActivity, HomeActivity::class.java)
         startActivity(nextScreen)
         finish()
     }

@@ -8,9 +8,9 @@
 
     <ImageView
             android:id="@+id/ivLogo"
-            android:layout_width="@dimen/default_250_dp"
-            android:layout_height="@dimen/default_200_dp"
-            android:src="@drawable/ic_home_black_24dp"
+            android:layout_width="322dp"
+            android:layout_height="431dp"
+            android:src="@drawable/cana_splash"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
