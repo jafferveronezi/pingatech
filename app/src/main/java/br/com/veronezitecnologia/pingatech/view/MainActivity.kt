@@ -1,8 +1,9 @@
-package br.com.veronezitecnologia.pingatech
+package br.com.veronezitecnologia.pingatech.view
 
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
+import br.com.veronezitecnologia.pingatech.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
