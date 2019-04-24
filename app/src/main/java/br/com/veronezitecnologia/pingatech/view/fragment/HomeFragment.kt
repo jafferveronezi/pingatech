@@ -1,18 +1,23 @@
 package br.com.veronezitecnologia.pingatech.view.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.Toast
 
 import br.com.veronezitecnologia.pingatech.R
+import br.com.veronezitecnologia.pingatech.model.PingaModel
+import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class FragmentHome : Fragment() {
-    /**
-     * Initialize newInstance for passing paameters
-     */
+
     companion object {
         fun newInstance(): FragmentHome {
             var fragmentHome = FragmentHome()
@@ -20,11 +25,11 @@ class FragmentHome : Fragment() {
             fragmentHome.arguments = args
             return fragmentHome
         }
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -35,17 +40,83 @@ class FragmentHome : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var editTextHome = view!!.findViewById(R.id.editTextHome) as EditText
+//        var listPinga = view!!.findViewById(R.id.listPinga) as RecyclerView
+
+        listPinga.adapter = PingaAdapter(pingas(), view.context, { pinga ->
+//            val detalheIntent = Intent(this, DetalheActivity::class.java)
+//            detalheIntent.putExtra("PINGA", pinga)
+//            startActivity(detalheIntent)
+            Toast.makeText(view.context, pinga.name, Toast.LENGTH_LONG).show()
+        })
+
+        val layoutManager = LinearLayoutManager(view.context)
+        listPinga.layoutManager = layoutManager
     }
 
-//    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//        var rootView = inflater!!.inflate(R.layout.fragment_home, container, false)
-//        return rootView
-//    }
+    private fun pingas(): MutableList<PingaModel> {
+        return listOf(
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            ),
+            PingaModel(
+                R.drawable.barril,
+                "Santa Mônica",
+                "Campo do Meio - MG",
+                "Desde 1938"
+            )
 
-//    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//
-//        var editTextHome = view!!.findViewById(R.id.editTextHome) as EditText
-//    }
+        ).toMutableList()
+    }
+
 }

@@ -21,9 +21,4 @@ class FragmentDashboard: Fragment(){
         var rootView = inflater!!.inflate(R.layout.fragment_dashboard, container, false)
         return rootView
     }
-
-//    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//        var rootView = inflater!!.inflate(R.layout.fragment_dashboard, container, false)
-//        return rootView
-//    }
 }

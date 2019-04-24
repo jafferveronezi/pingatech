@@ -22,8 +22,4 @@ class FragmentNotification : Fragment(){
         return rootView
     }
 
-//    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-//        var rootView = inflater!!.inflate(R.layout.fragment_notification, container, false)
-//        return rootView
-//    }
 }
