@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+        <ImageView
+                android:id="@+id/imagePinga"
+                android:layout_width="96dp"
+                android:layout_height="80dp"
+                tools:src="@drawable/barril" />
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+            <TextView
+                    android:id="@+id/namePinga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="Santa Mônica" />
+            <TextView
+                    android:id="@+id/manufacturingYearPinga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#AAA"
+                    android:textSize="12sp"
+                    tools:text="Produção Safra 2018" />
+            <TextView
+                    android:id="@+id/cityPinga"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:textSize="14sp"
+                    tools:text="Campo do Meio - MG" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

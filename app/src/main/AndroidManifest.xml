@@ -9,12 +9,19 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".view.SelectionActivity">
+        </activity>
+        <activity android:name=".view.StoryActivity">
+        </activity>
+        <activity android:name=".view.AboutActivity">
+        </activity>
         <activity
                 android:name=".view.HomeActivity"
                 android:label="@string/app_name">
         </activity>
-        <activity android:name=".view.SplashActivity"
-                  android:theme="@style/FullScreen">
+        <activity
+                android:name=".view.SplashActivity"
+                android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
