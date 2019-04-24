@@ -1,4 +1,4 @@
-package br.com.veronezitecnologia.pingatech.view.model
+package br.com.veronezitecnologia.pingatech.model
 
 import android.os.Parcel
 import android.os.Parcelable

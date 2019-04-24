@@ -1,4 +1,4 @@
-package br.com.veronezitecnologia.pingatech.view
+package br.com.veronezitecnologia.pingatech.view.fragment
 
 import android.content.Context
 import android.net.Uri

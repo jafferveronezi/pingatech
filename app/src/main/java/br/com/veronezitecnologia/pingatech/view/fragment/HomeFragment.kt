@@ -1,7 +1,5 @@
-package br.com.veronezitecnologia.pingatech.view
+package br.com.veronezitecnologia.pingatech.view.fragment
 
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater

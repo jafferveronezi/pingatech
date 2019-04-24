@@ -1,13 +1,14 @@
-package br.com.veronezitecnologia.pingatech.view
+package br.com.veronezitecnologia.pingatech.view.activity
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.FrameLayout
 import br.com.veronezitecnologia.pingatech.R
-import kotlinx.android.synthetic.main.activity_home.*
+import br.com.veronezitecnologia.pingatech.view.fragment.FragmentDashboard
+import br.com.veronezitecnologia.pingatech.view.fragment.FragmentHome
+import br.com.veronezitecnologia.pingatech.view.fragment.FragmentNotification
 
 class HomeActivity : AppCompatActivity() {
     private var content: FrameLayout? = null

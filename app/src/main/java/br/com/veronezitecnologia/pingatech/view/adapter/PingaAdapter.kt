@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.veronezitecnologia.pingatech.R
-import br.com.veronezitecnologia.pingatech.view.model.PingaModel
+import br.com.veronezitecnologia.pingatech.model.PingaModel
 
 class PingaAdapter(val pingas: MutableList<PingaModel>,
-                    private val context: Context,
-                    val listener: (PingaModel) -> Unit) : RecyclerView.Adapter<PingaViewHolder>() {
+                   private val context: Context,
+                   val listener: (PingaModel) -> Unit) : RecyclerView.Adapter<PingaViewHolder>() {
 
     override fun onBindViewHolder(holder: PingaViewHolder, position: Int) {
         val pinga = pingas[position]
