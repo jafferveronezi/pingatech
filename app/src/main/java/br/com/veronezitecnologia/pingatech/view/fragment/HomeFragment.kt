@@ -13,6 +13,7 @@ import android.widget.Toast
 
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaModel
+import br.com.veronezitecnologia.pingatech.view.activity.DetailPingaActivity
 import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -40,13 +41,11 @@ class FragmentHome : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        var listPinga = view!!.findViewById(R.id.listPinga) as RecyclerView
 
         listPinga.adapter = PingaAdapter(pingas(), view.context, { pinga ->
-//            val detalheIntent = Intent(this, DetalheActivity::class.java)
-//            detalheIntent.putExtra("PINGA", pinga)
-//            startActivity(detalheIntent)
-            Toast.makeText(view.context, pinga.name, Toast.LENGTH_LONG).show()
+            val detailIntent = Intent(view.context, DetailPingaActivity::class.java)
+            detailIntent.putExtra("PINGA", pinga)
+            startActivity(detailIntent)
         })
 
         val layoutManager = LinearLayoutManager(view.context)
