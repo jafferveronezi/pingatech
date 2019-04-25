@@ -8,7 +8,7 @@ import android.widget.FrameLayout
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.view.fragment.FragmentDashboard
 import br.com.veronezitecnologia.pingatech.view.fragment.FragmentHome
-import br.com.veronezitecnologia.pingatech.view.fragment.FragmentNotification
+import br.com.veronezitecnologia.pingatech.view.fragment.AboutFragment
 
 class HomeActivity : AppCompatActivity() {
     private var content: FrameLayout? = null
@@ -26,7 +26,7 @@ class HomeActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                var fragment = FragmentNotification()
+                var fragment = AboutFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
