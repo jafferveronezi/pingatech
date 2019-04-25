@@ -24,7 +24,6 @@ class PingaAdapter(val pingas: MutableList<PingaModel>,
         return PingaViewHolder(view)
     }
 
-    //Método que deverá retornar quantos itens há na lista.
     override fun getItemCount(): Int {
         return pingas.size
     }
