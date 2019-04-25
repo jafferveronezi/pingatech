@@ -6,10 +6,12 @@ import android.os.Parcelable
 data class PingaModel(val resourceId: Int,
                       val name: String,
                       val city: String,
-                      val manufacturingYear: String): Parcelable {
+                      val manufacturingYear: String,
+                      val type: String): Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString()
@@ -21,6 +23,7 @@ data class PingaModel(val resourceId: Int,
         parcel.writeString(name)
         parcel.writeString(city)
         parcel.writeString(manufacturingYear)
+        parcel.writeString(type)
     }
 
     override fun describeContents(): Int {

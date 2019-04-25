@@ -58,61 +58,71 @@ class FragmentHome : Fragment() {
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
-                "Desde 1938"
+                "Desde 1938",
+                "Tipo Ouro"
             )
 
         ).toMutableList()

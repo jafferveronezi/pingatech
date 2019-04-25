@@ -12,6 +12,7 @@ class PingaViewHolder(itemView: View) :
     fun bindView(pinga: PingaModel,
                  listerner: (PingaModel) -> Unit) = with(itemView) {
         namePinga.text = pinga.name
+        typePinga.text = pinga.type
         manufacturingYearPinga.text = pinga.manufacturingYear
         cityPinga.text = pinga.city
         imagePinga.setImageDrawable(ContextCompat.getDrawable(context, pinga.resourceId))
