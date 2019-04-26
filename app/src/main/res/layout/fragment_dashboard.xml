@@ -1,23 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" app:layout_constraintTop_toTopOf="@+id/city_register"
+            app:layout_constraintBottom_toTopOf="@+id/city_register">
+
+        <ImageView
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                tools:srcCompat="@drawable/barril"
+                android:id="@+id/imageView" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"/>
+
+        <Button
+                android:text="Button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/photo_button" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" android:textColor="@color/colorPrimary"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/name_register"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/photo_button" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp">
 
-    <TextView
-            android:id="@+id/textViewDashboard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Dashboard"
-            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:layout_centerInParent="true"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"
-            android:drawableTop="@drawable/ic_dashboard_black_24dp"/>
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_name_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe o nome" android:layout_marginEnd="@dimen/default_16_dp"
+                    android:layout_marginStart="@dimen/default_16_dp"/>
+        </android.support.design.widget.TextInputLayout>
 
-    <EditText
-            android:id="@+id/editTextDashboard"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-    />
-</RelativeLayout>
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/city_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/name_register">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_city_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe a cidade" android:layout_marginStart="@dimen/default_16_dp"
+                    android:layout_marginEnd="@dimen/default_16_dp" android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/manufacturingYear_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/city_register" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_manufacturingYear_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe o Ano" android:layout_marginEnd="@dimen/default_16_dp"
+                    android:layout_marginStart="@dimen/default_16_dp" android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/type_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/manufacturingYear_register"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_type_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Informe o tipo" android:layout_marginStart="@dimen/default_16_dp"
+                    android:layout_marginEnd="@dimen/default_16_dp" android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/telephone_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/type_register"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="16dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_telephone_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|phone"
+                    android:hint="Informe o telefone" android:layout_marginStart="@dimen/default_16_dp"
+                    android:layout_marginEnd="@dimen/default_16_dp" android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/description_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/telephone_register"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_description_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Adicione uma descrição" android:layout_marginTop="@dimen/default_16_dp"
+                    android:layout_marginStart="@dimen/default_16_dp" android:layout_marginEnd="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+        <Button
+                android:text="Cadastrar"
+                android:layout_width="240dp"
+                android:layout_height="46dp" android:id="@+id/register_button" android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/description_register" android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" android:textColor="@color/colorPrimary"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="16dp"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
