@@ -6,7 +6,7 @@ import android.os.Build
 import android.support.v4.app.ActivityCompat
 import android.support.v4.content.ContextCompat
 
-object PermissaoUtils {
+object PermissionUtils {
 
     fun validaPermissao(permissoes: Array<String>, activity: Activity, requestCode: Int): Boolean {
         if(Build.VERSION.SDK_INT >= 23) {

@@ -22,7 +22,7 @@ import android.view.View
 import android.widget.Toast
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaModel
-import br.com.veronezitecnologia.pingatech.utils.PermissaoUtils
+import br.com.veronezitecnologia.pingatech.utils.PermissionUtils
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -37,13 +37,16 @@ import kotlinx.android.synthetic.main.content_main.*
 import java.io.ByteArrayOutputStream
 import java.util.*
 
-class MainActivity : AppCompatActivity(), OnMapReadyCallback {
+class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    val permissoesLocalizacao = listOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+    val permissoesLocalizacao = listOf(Manifest.permission.ACCESS_FINE_LOCATION,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.CALL_PHONE)
 
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
+    private var permissionWrite = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,15 +56,28 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         var pinga = intent.getParcelableExtra<PingaModel>(pingaObj)
         createDetail(pinga)
 
-        PermissaoUtils.validaPermissao(permissoesLocalizacao.toTypedArray(), this, 1)
+        PermissionUtils.validaPermissao(permissoesLocalizacao.toTypedArray(), this, 1)
 //
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
 //        val mapFragment = supportFragmentManager
 //            .findFragmentById(R.id.map) as SupportMapFragment
 //        mapFragment.getMapAsync(this)
 
+        contact_detail.setOnClickListener {
+            if(permissionCall()) {
+                val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + pinga.telephone))
+                startActivity(intent)
+            } else {
+                Toast.makeText(applicationContext, "Sem permissão de acesso ao Telefone!", Toast.LENGTH_LONG).show()
+            }
+        }
+
         compartilhar_button.setOnClickListener {
-            share_bitMap_to_Apps()
+            if (permissionWrite()) {
+                share_bitMap_to_Apps()
+            } else {
+                Toast.makeText(applicationContext, "Sem perimssão de acesso a escrita!", Toast.LENGTH_LONG).show()
+            }
         }
 
         fab.setOnClickListener { view ->
@@ -80,10 +96,17 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         val pingaObj = "PINGA"
     }
 
-    // shared ********************************************************
+    //**************** shared ********************************************************
 
     fun permissionWrite(): Boolean {
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+            return true
+        }
+        return false
+    }
+
+    fun permissionCall(): Boolean {
+        if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
             return true
         }
         return false
@@ -137,7 +160,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         return Uri.parse(path)
     }
 
-    // shared ********************************************************
+    // ******************* shared ********************************************************
 
     private fun iniLocationListener() {
         locationListener = object : LocationListener {

@@ -4,17 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.Toast
 
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaModel
-import br.com.veronezitecnologia.pingatech.view.activity.DetailPingaActivity
-import br.com.veronezitecnologia.pingatech.view.activity.MainActivity
+import br.com.veronezitecnologia.pingatech.view.activity.DetailActivity
 import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -35,7 +31,7 @@ class FragmentHome : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         listPinga.adapter = PingaAdapter(pingas(), view.context, { pinga ->
-            val detailIntent = Intent(view.context, MainActivity::class.java)
+            val detailIntent = Intent(view.context, DetailActivity::class.java)
             detailIntent.putExtra(pingaObj, pinga)
             startActivity(detailIntent)
         })
@@ -51,70 +47,80 @@ class FragmentHome : Fragment() {
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             ),
             PingaModel(
                 R.drawable.barril,
                 "Santa Mônica",
                 "Campo do Meio - MG",
                 "Desde 1938",
-                "Tipo Ouro"
+                "Tipo Ouro",
+                "55353857894"
             )
 
         ).toMutableList()

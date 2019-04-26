@@ -7,15 +7,16 @@ data class PingaModel(val resourceId: Int,
                       val name: String,
                       val city: String,
                       val manufacturingYear: String,
-                      val type: String): Parcelable {
+                      val type: String,
+                      val telephone: String ): Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
-        parcel.readString()
-    ) {
+        parcel.readString(),
+        parcel.readString()) {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -24,6 +25,7 @@ data class PingaModel(val resourceId: Int,
         parcel.writeString(city)
         parcel.writeString(manufacturingYear)
         parcel.writeString(type)
+        parcel.writeString(telephone)
     }
 
     override fun describeContents(): Int {
