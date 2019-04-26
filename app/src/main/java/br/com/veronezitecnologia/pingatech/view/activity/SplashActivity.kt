@@ -20,7 +20,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun showLogin() {
-        val nextScreen = Intent(this@SplashActivity, HomeActivity::class.java)
+        val nextScreen = Intent(this@SplashActivity, LoginActivity::class.java)
         startActivity(nextScreen)
         finish()
     }
