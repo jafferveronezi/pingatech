@@ -19,9 +19,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         mAuth = FirebaseAuth.getInstance()
 
-        if (mAuth.currentUser != null) {
-            goToHome()
-        }
+        //if (mAuth.currentUser != null) {
+        //    goToHome()
+        //}
 
         btLogin.setOnClickListener {
             mAuth.signInWithEmailAndPassword(
@@ -41,9 +41,13 @@ class LoginActivity : AppCompatActivity() {
         }
     }
     private fun goToHome() {
-        val intent = Intent(this, HomeActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
+        //val intent = Intent(this, RegisterActivity::class.java)
+        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        //startActivity(intent)
+        //finish()
+        //startActivityForResult(Intent(this, HomeActivity::class.java), newUserRequestCode)
+        val nextScreen = Intent(this@LoginActivity, HomeActivity::class.java)
+        startActivity(nextScreen)
         finish()
     }
 
