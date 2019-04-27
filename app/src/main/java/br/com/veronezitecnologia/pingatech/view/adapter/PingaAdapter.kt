@@ -8,9 +8,13 @@ import android.view.ViewGroup
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaModel
 
-class PingaAdapter(val pingas: MutableList<PingaModel>,
+class PingaAdapter(var pingas: MutableList<PingaModel>,
                    private val context: Context,
                    val listener: (PingaModel) -> Unit) : RecyclerView.Adapter<PingaViewHolder>() {
+
+    fun setList(games: MutableList<PingaModel>) {
+        this.pingas = pingas
+    }
 
     override fun onBindViewHolder(holder: PingaViewHolder, position: Int) {
         val pinga = pingas[position]

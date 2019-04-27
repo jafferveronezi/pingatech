@@ -20,7 +20,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="@dimen/default_8_dp"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="@dimen/default_8_dp"/>
+                android:layout_marginStart="@dimen/default_8_dp" app:srcCompat="@drawable/barril"/>
 
         <Button
                 android:text="@string/select_image"

@@ -12,6 +12,13 @@
     <string name="manufacture_year_pinga">Ano de Produção:</string>
     <string name="city_pinga">Cidade:</string>
     <string name="description">Descrição:</string>
+    <string name="error_name">Informe o nome da Pinga!</string>
+    <string name="error_city">Informe a cidade do Alambique!</string>
+    <string name="error_manufacture_year">Informe a data de Produção da Pinga!</string>
+    <string name="error_type">Informe o tipo da Pinga!</string>
+    <string name="error_telephone"> Informe o telefone do Alambique!</string>
+    <string name="error_description">Informe uma descrição da Pinga!</string>
+    <string name="register_ok">Cadastro efetuado!</string>
 
     <string name="developer_app">Disciplina de Android da MBA de Desenvolvimento Mobile da FIAP.
         Daniel Silva- Jaffer - Leandro
