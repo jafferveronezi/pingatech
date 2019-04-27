@@ -26,7 +26,6 @@ import br.com.veronezitecnologia.pingatech.utils.PermissionUtils
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.CircleOptions
 import com.google.android.gms.maps.model.LatLng
@@ -40,13 +39,19 @@ import java.util.*
 class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
-    val permissoesLocalizacao = listOf(Manifest.permission.ACCESS_FINE_LOCATION,
+    val permissoesLocalizacao = listOf(
+        Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
-        Manifest.permission.CALL_PHONE)
+        Manifest.permission.CALL_PHONE
+    )
 
     private lateinit var locationManager: LocationManager
     private lateinit var locationListener: LocationListener
     private var permissionWrite = false
+
+    companion object {
+        val pingaObj = "PINGA"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,7 +69,7 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 //        mapFragment.getMapAsync(this)
 
         contact_detail.setOnClickListener {
-            if(permissionCall()) {
+            if (permissionCall()) {
                 val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + pinga.telephone))
                 startActivity(intent)
             } else {
@@ -88,15 +93,9 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun createDetail(pinga: PingaModel) {
         image_detail.setImageDrawable(ContextCompat.getDrawable(this, pinga.resourceId))
-        name_detail.text = pinga.name
+        name_value.text = pinga.name
         history_detail.text = pinga.city
     }
-
-    companion object {
-        val pingaObj = "PINGA"
-    }
-
-    //**************** shared ********************************************************
 
     fun permissionWrite(): Boolean {
         if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
@@ -112,10 +111,9 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         return false
     }
 
-    fun share_bitMap_to_Apps()
-    {
+    fun share_bitMap_to_Apps() {
 
-        val  i = Intent(Intent.ACTION_SEND);
+        val i = Intent(Intent.ACTION_SEND);
         i.setType("image/*")
         var stream = ByteArrayOutputStream();
         /*compress(Bitmap.CompressFormat.PNG, 100, stream);
@@ -123,36 +121,25 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         i.putExtra(Intent.EXTRA_STREAM, getImageUri(this, getBitmapFromView(content_shared)))
         try {
             startActivity(Intent.createChooser(i, "My Profile ..."))
-        } catch (ex: ActivityNotFoundException ) {
-         ex.printStackTrace()
+        } catch (ex: ActivityNotFoundException) {
+            ex.printStackTrace()
         }
     }
 
 
-    fun getBitmapFromView(view: View): Bitmap
-    {
-        //Define a bitmap with the same size as the view
-        var returnedBitmap = Bitmap.createBitmap (view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888)
-        //Bind a canvas to it
+    fun getBitmapFromView(view: View): Bitmap {
+        var returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888)
         var canvas = Canvas(returnedBitmap)
-        //Get the view's background
         var bgDrawable = view.getBackground()
         if (bgDrawable != null)
-        //has background drawable, then draw it on the canvas
             bgDrawable.draw(canvas)
         else
-        //does not have background drawable, then draw white background on the canvas
             canvas.drawColor(Color.WHITE)
-        // draw the view on the canvas
-        view.draw(canvas);
-        //return the bitmap
+        view.draw(canvas)
         return returnedBitmap
     }
 
-
-
-    fun getImageUri(inContext: Context,  inImage: Bitmap): Uri
-    {
+    fun getImageUri(inContext: Context, inImage: Bitmap): Uri {
         var bytes = ByteArrayOutputStream();
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
 
@@ -187,8 +174,8 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        for(resposta in grantResults) {
-            if(resposta == PackageManager.PERMISSION_DENIED) {
+        for (resposta in grantResults) {
+            if (resposta == PackageManager.PERMISSION_DENIED) {
                 Toast.makeText(applicationContext, "Sem perimssão de acesso!", Toast.LENGTH_LONG).show()
             } else {
                 requestLocationUpdates()
@@ -198,24 +185,27 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun requestLocationUpdates() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-            == PackageManager.PERMISSION_GRANTED) {
+            == PackageManager.PERMISSION_GRANTED
+        ) {
             var locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager
             locationManager.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER,
                 0,
                 0.1f,
-                locationListener)
+                locationListener
+            )
         }
     }
 
-    private  fun addMarcador(latLng: LatLng, titulo: String) {
+    private fun addMarcador(latLng: LatLng, titulo: String) {
         mMap.addMarker(
             MarkerOptions()
                 .position(latLng)
-                .title(titulo))
+                .title(titulo)
+        )
     }
 
-    private fun getEnderecoFormatado(latLng: LatLng) : String {
+    private fun getEnderecoFormatado(latLng: LatLng): String {
         val geocoder = Geocoder(applicationContext, Locale.getDefault())
         val endereco = geocoder.getFromLocation(latLng.latitude, latLng.longitude, 1)
 
@@ -241,8 +231,8 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a marker in Sydney and move the camera
         val fiapPaulista = LatLng(-23.5641095, -46.6545986)
         val fiapAclimacao = LatLng(-23.574081, -46.6256473)
-        val fiapVilaOlimpia = LatLng(-23.5953251,-46.7100846)
-        val fiapAlphaville = LatLng(-23.5148613,-46.7589067)
+        val fiapVilaOlimpia = LatLng(-23.5953251, -46.7100846)
+        val fiapAlphaville = LatLng(-23.5148613, -46.7589067)
 
         mMap.setOnMapClickListener {
             addMarcador(it, getEnderecoFormatado(it))
@@ -257,26 +247,30 @@ class DetailActivity : AppCompatActivity(), OnMapReadyCallback {
                 .position(fiapPaulista)
                 .title("FIAP Paulista")
                 .snippet(getEnderecoFormatado(fiapPaulista))
-                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)))
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
+        )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(fiapAclimacao)
                 .title("FIAP Aclimação")
                 .snippet(getEnderecoFormatado(fiapAclimacao))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.macador)))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.macador))
+        )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(fiapVilaOlimpia)
                 .snippet(getEnderecoFormatado(fiapVilaOlimpia))
-                .title("FIAP Vila Olímpia"))
+                .title("FIAP Vila Olímpia")
+        )
 
         mMap.addMarker(
             MarkerOptions()
                 .position(fiapAlphaville)
                 .snippet(getEnderecoFormatado(fiapAlphaville))
-                .title("FIAP Alphaville"))
+                .title("FIAP Alphaville")
+        )
 
         var circulo = CircleOptions()
         circulo.center(fiapPaulista)
