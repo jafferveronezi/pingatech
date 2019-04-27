@@ -10,55 +10,64 @@
         tools:context=".view.activity.DetailActivity">
 
     <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/default_100_dp"
+            android:layout_height="@dimen/default_100_dp"
             tools:srcCompat="@drawable/barril"
             android:id="@+id/image_detail"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/default_8_dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"/>
+            android:layout_marginStart="@dimen/default_16_dp"/>
     <TextView
             android:text="Cachaça BOA"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/name_detail"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/default_16_dp"
             app:layout_constraintTop_toBottomOf="@+id/image_detail"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/default_16_dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"/>
+            android:layout_marginStart="@dimen/default_16_dp"/>
     <TextView
             android:text="@string/history"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/history_detail"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/default_16_dp"
             app:layout_constraintTop_toBottomOf="@+id/name_detail"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/default_16_dp"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="16dp"/>
+            android:layout_marginEnd="@dimen/default_16_dp"/>
     <Button
-            android:text="Contato"
-            android:layout_width="240dp"
-            android:layout_height="46dp"
+            android:theme="@style/ButtonTheme"
+            android:text="@string/contact"
+            android:layout_width="@dimen/default_240_dp"
+            android:layout_height="@dimen/default_46_dp"
             android:id="@+id/contact_detail"
-            android:textColor="@color/colorPrimary" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/history_detail" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/default_16_dp"
+            app:layout_constraintTop_toBottomOf="@+id/history_detail"
+            android:layout_marginEnd="@dimen/default_8_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/default_8_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/shape_button"/>
     <Button
-            android:text="Compartilhar"
-            android:layout_width="240dp"
-            android:layout_height="46dp"
+            android:theme="@style/ButtonTheme"
+            android:text="@string/shared"
+            android:layout_width="@dimen/default_240_dp"
+            android:layout_height="@dimen/default_46_dp"
             android:id="@+id/compartilhar_button"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp"
-            android:textColor="@color/colorPrimary" android:layout_marginTop="24dp"
-            app:layout_constraintTop_toBottomOf="@+id/contact_detail"/>
+            android:layout_marginEnd="@dimen/default_8_dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/default_8_dp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginTop="@dimen/default_24_dp"
+            app:layout_constraintTop_toBottomOf="@+id/contact_detail"
+            android:background="@drawable/shape_button"/>
 
 </android.support.constraint.ConstraintLayout>
