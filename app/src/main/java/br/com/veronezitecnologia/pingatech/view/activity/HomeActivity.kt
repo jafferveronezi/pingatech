@@ -9,6 +9,7 @@ import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.view.fragment.FragmentDashboard
 import br.com.veronezitecnologia.pingatech.view.fragment.FragmentHome
 import br.com.veronezitecnologia.pingatech.view.fragment.AboutFragment
+import com.google.firebase.messaging.FirebaseMessaging
 
 class HomeActivity : AppCompatActivity() {
     private var content: FrameLayout? = null
@@ -53,5 +54,7 @@ class HomeActivity : AppCompatActivity() {
 
         val fragment = FragmentHome.Companion.newInstance()
         addFragment(fragment)
+
+        FirebaseMessaging.getInstance().subscribeToTopic("pinga-update")
     }
 }
