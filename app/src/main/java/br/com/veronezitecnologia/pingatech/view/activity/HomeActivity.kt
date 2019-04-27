@@ -20,12 +20,12 @@ class HomeActivity : AppCompatActivity() {
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
+            R.id.navigation_register -> {
                 val fragment = FragmentDashboard()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
+            R.id.navigation_about -> {
                 var fragment = AboutFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
