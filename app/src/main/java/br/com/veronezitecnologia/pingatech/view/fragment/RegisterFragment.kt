@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import br.com.veronezitecnologia.pingatech.model.PingaModel
 import br.com.veronezitecnologia.pingatech.R
+import br.com.veronezitecnologia.pingatech.model.PingaData
+import br.com.veronezitecnologia.pingatech.repository.DataBasePinga
 import kotlinx.android.synthetic.main.fragment_register.*
 
-class FragmentDashboard: Fragment(){
+class FragmentDashboard : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,38 +28,38 @@ class FragmentDashboard: Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       register_button.setOnClickListener {
-          if(valideInputsRegister()) {
-              clearRegister()
-          }
-       }
+        register_button.setOnClickListener {
+            if (valideInputsRegister()) {
+                saveDatabase()
+            }
+        }
 
     }
 
-    private fun valideInputsRegister() : Boolean {
+    private fun valideInputsRegister(): Boolean {
         var valide = true
 
-        if("".equals(ed_name_register.text.toString())) {
+        if ("".equals(ed_name_register.text.toString())) {
             ed_name_register.setError(context?.getString(R.string.error_name))
             valide = false
         }
-        if("".equals(ed_city_register.text.toString())){
+        if ("".equals(ed_city_register.text.toString())) {
             ed_city_register.setError(context?.getString(R.string.error_city))
             valide = false
         }
-        if("".equals(ed_manufacturingYear_register.text.toString())){
+        if ("".equals(ed_manufacturingYear_register.text.toString())) {
             ed_manufacturingYear_register.setError(context?.getString(R.string.error_manufacture_year))
             valide = false
         }
-        if("".equals(ed_type_register.text.toString())){
+        if ("".equals(ed_type_register.text.toString())) {
             ed_type_register.setError(context?.getString(R.string.error_type))
             valide = false
         }
-        if("".equals(ed_telephone_register.text.toString())){
+        if ("".equals(ed_telephone_register.text.toString())) {
             ed_telephone_register.setError(context?.getString(R.string.error_telephone))
             valide = false
         }
-        if("".equals(ed_description_register.text.toString())){
+        if ("".equals(ed_description_register.text.toString())) {
             ed_description_register.setError(context?.getString(R.string.error_description))
             valide = false
         }
@@ -65,17 +67,25 @@ class FragmentDashboard: Fragment(){
     }
 
     private fun saveDatabase() {
-//        val db = DataBasePinga.getDatabase(context?.applicationContext!!)
-//        val pinga = Pinga(1, ed_name_register.text.toString(),  ed_city_register.text.toString(),
-//            ed_manufacturingYear_register.text.toString(), ed_type_register.text.toString(),
-//            ed_telephone_register.text.toString(), ed_description_register.text.toString())
+        val db = DataBasePinga.getDatabase(context?.applicationContext!!)
 
-//        if (pinga.name != "" && pinga.city != "" && pinga.manufacturingYear != "" &&
-//            pinga.type != "" && pinga.telephone != "" && pinga.description != "" ) {
-//            InsertAsyncTask(db!!).execute(pinga)
-//            Toast.makeText(context?.applicationContext!!, this.getString(R.string.register_ok), Toast.LENGTH_LONG).show()
-//            clearRegister()
-//        }
+        val pinga = PingaData(
+            1, ed_name_register.text.toString(), ed_city_register.text.toString(),
+            ed_manufacturingYear_register.text.toString(), ed_type_register.text.toString(),
+            ed_telephone_register.text.toString(), ed_description_register.text.toString()
+        )
+
+        if (pinga.name != "" && pinga.city != "" && pinga.manufacturingYear != "" &&
+            pinga.type != "" && pinga.telephone != "" && pinga.description != ""
+        ) {
+
+            InsertAsyncTask(db!!).execute(pinga)
+
+            Toast.makeText(context?.applicationContext!!, this.getString(R.string.register_ok), Toast.LENGTH_LONG)
+                .show()
+
+            clearRegister()
+        }
     }
 
     fun clearRegister() {
@@ -87,13 +97,13 @@ class FragmentDashboard: Fragment(){
         ed_description_register.text = null
     }
 
-//    private inner class InsertAsyncTask internal
-//    constructor(appDatabase: DataBasePinga) : AsyncTask<Pinga, Void, String>() {
-//        private val db: DataBasePinga = appDatabase
-//
-//        override fun doInBackground(vararg params: Pinga): String {
-//            db.pingaDAO().inserir(params[0])
-//            return ""
-//        }
-//    }
+    private inner class InsertAsyncTask internal
+    constructor(appDatabase: DataBasePinga) : AsyncTask<PingaData, Void, String>() {
+        private val db: DataBasePinga = appDatabase
+
+        override fun doInBackground(vararg params: PingaData): String {
+            db.pingaDAO().inserir(params[0])
+            return ""
+        }
+    }
 }

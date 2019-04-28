@@ -2,6 +2,7 @@ package br.com.veronezitecnologia.pingatech.view.fragment
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -11,15 +12,17 @@ import android.view.View
 import android.view.ViewGroup
 
 import br.com.veronezitecnologia.pingatech.R
+import br.com.veronezitecnologia.pingatech.model.PingaData
 import br.com.veronezitecnologia.pingatech.model.PingaModel
 import br.com.veronezitecnologia.pingatech.view.activity.DetailActivity
 import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
+import br.com.veronezitecnologia.pingatech.viewmodel.ListPingaViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class FragmentHome : Fragment() {
 
     private var adapter: PingaAdapter? = null
-    private var pingas: MutableList<PingaModel> = mutableListOf()
+    private var pingas: MutableList<PingaData> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,116 +37,29 @@ class FragmentHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        showData();
+        showData()
 
-        listPinga.adapter = PingaAdapter(pingas, view.context, { pinga ->
+        listPinga.layoutManager =  LinearLayoutManager(context)
+
+        adapter = PingaAdapter(pingas, view.context, { pinga ->
             val detailIntent = Intent(view.context, DetailActivity::class.java)
-            detailIntent.putExtra(pingaObj, pinga)
+            detailIntent.putExtra(pingaObj, "pinga")
             startActivity(detailIntent)
         })
 
-        val layoutManager = LinearLayoutManager(view.context)
-        listPinga.layoutManager = layoutManager
+        listPinga.adapter = adapter
+
     }
 
-//    private fun showData() {
-////of() — indica a activity ou Fragment em que o ViewModel será utilizado
-////get() — indica o ViewModel que será utilizado.
-//
-//        ViewModelProviders.of(this)
-//            .get(ListPingaViewModel::class.java)
-//            .pingas
-//            .observe(this, Observer<MutableList<Pinga>> { pingas ->
-//                adapter?.setList(pingas!! as MutableList<PingaModel>)
-//                listPinga.adapter?.notifyDataSetChanged()
-//            })
-//    }
-
-//    private fun pingas(): MutableList<PingaModel> {
-//        return listOf(
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            ),
-//            PingaModel(
-//                R.drawable.barril,
-//                "Santa Mônica",
-//                "Campo do Meio - MG",
-//                "Desde 1938",
-//                "Tipo Ouro",
-//                "55353857894"
-//            )
-//
-//        ).toMutableList()
-//    }
+    private fun showData() {
+        ViewModelProviders.of(this)
+            .get(ListPingaViewModel::class.java)
+            .pingas
+            .observe(this, Observer<MutableList<PingaData>> { pingas ->
+                adapter?.setList(pingas!!)
+                listPinga.adapter?.notifyDataSetChanged()
+            })
+    }
 
     companion object {
         fun newInstance(): FragmentHome {

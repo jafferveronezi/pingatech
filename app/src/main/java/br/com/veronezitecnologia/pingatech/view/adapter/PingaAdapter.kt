@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import br.com.veronezitecnologia.pingatech.R
-import br.com.veronezitecnologia.pingatech.model.PingaModel
+import br.com.veronezitecnologia.pingatech.model.PingaData
 
-class PingaAdapter(var pingas: MutableList<PingaModel>,
+class PingaAdapter(var pingas: MutableList<PingaData>,
                    private val context: Context,
-                   val listener: (PingaModel) -> Unit) : RecyclerView.Adapter<PingaViewHolder>() {
+                   val listener: (PingaData) -> Unit) : RecyclerView.Adapter<PingaViewHolder>() {
 
-    fun setList(games: MutableList<PingaModel>) {
+    fun setList(pingas: MutableList<PingaData>) {
         this.pingas = pingas
     }
 
