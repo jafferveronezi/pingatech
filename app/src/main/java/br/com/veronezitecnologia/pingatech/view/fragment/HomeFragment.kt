@@ -1,6 +1,5 @@
 package br.com.veronezitecnologia.pingatech.view.fragment
 
-import android.app.Application
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
@@ -12,11 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import br.com.veronezitecnologia.pingatech.R
-import br.com.veronezitecnologia.pingatech.model.Pinga
 import br.com.veronezitecnologia.pingatech.model.PingaModel
 import br.com.veronezitecnologia.pingatech.view.activity.DetailActivity
 import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
-import br.com.veronezitecnologia.pingatech.viewmodel.ListPingaViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class FragmentHome : Fragment() {
@@ -37,7 +34,7 @@ class FragmentHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showData();
+//        showData();
 
         listPinga.adapter = PingaAdapter(pingas, view.context, { pinga ->
             val detailIntent = Intent(view.context, DetailActivity::class.java)
@@ -49,18 +46,18 @@ class FragmentHome : Fragment() {
         listPinga.layoutManager = layoutManager
     }
 
-    private fun showData() {
-//of() — indica a activity ou Fragment em que o ViewModel será utilizado
-//get() — indica o ViewModel que será utilizado.
-
-        ViewModelProviders.of(this)
-            .get(ListPingaViewModel::class.java)
-            .pingas
-            .observe(this, Observer<MutableList<Pinga>> { pingas ->
-                adapter?.setList(pingas!! as MutableList<PingaModel>)
-                listPinga.adapter?.notifyDataSetChanged()
-            })
-    }
+//    private fun showData() {
+////of() — indica a activity ou Fragment em que o ViewModel será utilizado
+////get() — indica o ViewModel que será utilizado.
+//
+//        ViewModelProviders.of(this)
+//            .get(ListPingaViewModel::class.java)
+//            .pingas
+//            .observe(this, Observer<MutableList<Pinga>> { pingas ->
+//                adapter?.setList(pingas!! as MutableList<PingaModel>)
+//                listPinga.adapter?.notifyDataSetChanged()
+//            })
+//    }
 
 //    private fun pingas(): MutableList<PingaModel> {
 //        return listOf(
