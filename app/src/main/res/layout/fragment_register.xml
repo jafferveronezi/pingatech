@@ -93,6 +93,7 @@
                     android:id="@+id/ed_manufacturingYear_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="number"
                     android:hint="Informe o Ano"
                     android:layout_marginEnd="@dimen/default_16_dp"
                     android:layout_marginStart="@dimen/default_16_dp"
