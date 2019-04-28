@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                              xmlns:app="http://schemas.android.com/apk/res-auto"
                                              xmlns:tools="http://schemas.android.com/tools"
@@ -16,11 +21,9 @@
             android:textColor="@color/colorAccent"
             android:textSize="@dimen/defaut_30_sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/image_about"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="@dimen/default_8_dp"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"/>
 
     <TextView
             android:id="@+id/developer_app"
@@ -29,12 +32,11 @@
             android:layout_margin="@dimen/default_16_dp"
             android:text="@string/developer_app"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_about"
             android:textStyle="bold"
-            android:layout_marginBottom="@dimen/default_16_dp"/>
+            app:layout_constraintHorizontal_bias="1.0" android:layout_marginTop="396dp"
+            app:layout_constraintTop_toBottomOf="@+id/map"/>
 
     <TextView
             android:id="@+id/version_app"
@@ -42,25 +44,34 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/default_16_dp"
             android:layout_marginEnd="@dimen/default_16_dp"
-            android:layout_marginBottom="@dimen/default_16_dp"
             android:text="@string/app_versao"
             android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/developer_app"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.517" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/developer_app" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.98"/>
 
     <ImageView
             android:id="@+id/image_about"
             android:layout_width="@dimen/default_0_dp"
-            android:layout_height="@dimen/default_300_dp"
+            android:layout_height="116dp"
             android:layout_marginStart="@dimen/default_8_dp"
             android:layout_marginEnd="@dimen/default_8_dp"
-            android:layout_marginBottom="@dimen/default_16_dp"
-            app:layout_constraintBottom_toTopOf="@+id/developer_app"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_about"
-            app:srcCompat="@drawable/cana_splash"/>
+            app:srcCompat="@drawable/cana_splash" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/item_about"/>
+
+    <include android:id="@+id/map"
+             layout="@layout/activity_maps"
+             android:layout_width="0dp"
+             android:layout_height="300dp"
+             android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent"
+             android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent"
+             android:layout_marginTop="20dp" app:layout_constraintTop_toBottomOf="@+id/image_about"
+             app:layout_constraintHorizontal_bias="0.0"/>
+
 </android.support.constraint.ConstraintLayout>
+</ScrollView>
