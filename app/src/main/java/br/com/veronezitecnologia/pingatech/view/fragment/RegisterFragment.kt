@@ -177,6 +177,7 @@ class FragmentDashboard : Fragment() {
         ed_type_register.text = null
         ed_telephone_register.text = null
         ed_description_register.text = null
+        imageView.setImageBitmap(ConvertBitmapUtils().getImage(convertImageDefault()))
     }
 
     private inner class InsertAsyncTask internal
