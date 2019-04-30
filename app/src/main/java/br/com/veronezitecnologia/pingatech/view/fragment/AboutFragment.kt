@@ -15,10 +15,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.fragment_about.*
 
-
-
-
-
 class AboutFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
@@ -44,9 +40,8 @@ class AboutFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
         val zoom = 17
-
-        // Add a marker in Sydney and move the camera
         val pingaTechLocation = LatLng(-21.1072852,-45.8302261)
+
         mMap.addMarker(MarkerOptions().position(pingaTechLocation).title(context?.getString(R.string.map_location)))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(pingaTechLocation))
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(pingaTechLocation, zoom.toFloat()));

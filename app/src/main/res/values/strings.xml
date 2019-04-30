@@ -25,6 +25,7 @@
     </string>
     <string name="app_versao">v1.0.0</string>
     <string name="map_location">A pingatech está localizada aqui!</string>
+    <string name="location">Localização:</string>
 
     <string name="history">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu aliquam libero. Aenean
         turpis velit, dapibus sodales posuere nec, rutrum vitae neque. In rhoncus neque et turpis feugiat, et volutpat
