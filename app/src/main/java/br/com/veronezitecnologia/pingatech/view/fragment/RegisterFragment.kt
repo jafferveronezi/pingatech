@@ -33,7 +33,7 @@ class FragmentDashboard : Fragment() {
 
     var currentPhotoPath: String = ""
     val REQUEST_IMAGE_CAPTURE = 1
-    var imageByte: ByteArray =  byteArrayOf(0x2E, 0x38)
+    var imageByte: ByteArray = byteArrayOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,7 +108,7 @@ class FragmentDashboard : Fragment() {
     }
 
     private fun convertImageDefault() : ByteArray  {
-        var convertDefault = BitmapFactory.decodeResource(context?.getResources(), R.drawable.barril);
+        var convertDefault = BitmapFactory.decodeResource(context?.getResources(), R.drawable.barril)
        return  ConvertBitmapUtils().getBytes(convertDefault)
     }
 
@@ -147,7 +147,7 @@ class FragmentDashboard : Fragment() {
 
         var imagePinga = imageByte
 
-        if (imagePinga == null) {
+        if (imagePinga.isEmpty()) {
             imagePinga = convertImageDefault()
         }
 

@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey
 class PingaData {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
-    var resourceId: ByteArray = byteArrayOf(0x2E, 0x38)
+    var resourceId: ByteArray = byteArrayOf()
     var name: String? = null
     var city: String? = null
     var manufacturingYear: String? = null
