@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey
 class PingaData {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
-    var resourceId: Int = 0
+    var resourceId: ByteArray = byteArrayOf(0x2E, 0x38)
     var name: String? = null
     var city: String? = null
     var manufacturingYear: String? = null
@@ -18,7 +18,7 @@ class PingaData {
     constructor() {}
 
     constructor(
-        resourceId: Int, name: String, city: String, manufacturingYear: String, type: String, telephone: String,
+        resourceId: ByteArray, name: String, city: String, manufacturingYear: String, type: String, telephone: String,
         description: String
     ) {
         this.resourceId = resourceId
@@ -32,7 +32,7 @@ class PingaData {
 
     constructor(
         id: Int,
-        resourceId: Int,
+        resourceId: ByteArray,
         name: String,
         city: String,
         manufacturingYear: String,

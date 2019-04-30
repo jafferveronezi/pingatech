@@ -4,6 +4,7 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import br.com.veronezitecnologia.pingatech.model.PingaData
+import br.com.veronezitecnologia.pingatech.utils.ConvertBitmapUtils
 import kotlinx.android.synthetic.main.pinga_item.view.*
 
 class PingaViewHolder(itemView: View) :
@@ -15,7 +16,7 @@ class PingaViewHolder(itemView: View) :
         typePinga.text = pinga.type
         manufacturingYearPinga.text = pinga.manufacturingYear
         cityPinga.text = pinga.city
-//        imagePinga.setImageDrawable(ContextCompat.getDrawable(context, pinga.resourceId))
+        imagePinga.setImageBitmap(ConvertBitmapUtils().getImage(pinga.resourceId))
 
         setOnClickListener { listerner(pinga) }
     }

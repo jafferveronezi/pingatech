@@ -15,10 +15,12 @@ import kotlinx.android.synthetic.main.fragment_register.*
 import android.provider.MediaStore
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Environment
 import android.support.v4.content.FileProvider
 import br.com.veronezitecnologia.pingatech.R
+import br.com.veronezitecnologia.pingatech.utils.ConvertBitmapUtils
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -31,6 +33,7 @@ class FragmentDashboard : Fragment() {
 
     var currentPhotoPath: String = ""
     val REQUEST_IMAGE_CAPTURE = 1
+    var imageByte: ByteArray =  byteArrayOf(0x2E, 0x38)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +57,6 @@ class FragmentDashboard : Fragment() {
                 saveDatabase()
             }
         }
-
     }
 
     private fun dispatchTakePictureIntent(context : Context) {
@@ -101,7 +103,13 @@ class FragmentDashboard : Fragment() {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
             val imageBitmap = data.extras.get("data") as Bitmap
             imageView.setImageBitmap(imageBitmap)
+            imageByte = ConvertBitmapUtils().getBytes(imageBitmap)
         }
+    }
+
+    private fun convertImageDefault() : ByteArray  {
+        var convertDefault = BitmapFactory.decodeResource(context?.getResources(), R.drawable.barril);
+       return  ConvertBitmapUtils().getBytes(convertDefault)
     }
 
     private fun valideInputsRegister(): Boolean {
@@ -137,8 +145,14 @@ class FragmentDashboard : Fragment() {
     private fun saveDatabase() {
         val db = DataBasePinga.getDatabase(context?.applicationContext!!)
 
+        var imagePinga = imageByte
+
+        if (imagePinga == null) {
+            imagePinga = convertImageDefault()
+        }
+
         val pinga = PingaData(
-            1, ed_name_register.text.toString(), ed_city_register.text.toString(),
+            imagePinga, ed_name_register.text.toString(), ed_city_register.text.toString(),
             ed_manufacturingYear_register.text.toString(), ed_type_register.text.toString(),
             ed_telephone_register.text.toString(), ed_description_register.text.toString()
         )
