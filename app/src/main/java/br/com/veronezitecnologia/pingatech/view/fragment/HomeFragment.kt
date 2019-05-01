@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -14,7 +15,9 @@ import android.view.ViewGroup
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaData
 import br.com.veronezitecnologia.pingatech.model.PingaModel
+import br.com.veronezitecnologia.pingatech.utils.ConvertBitmapUtils
 import br.com.veronezitecnologia.pingatech.view.activity.DetailActivity
+import br.com.veronezitecnologia.pingatech.view.activity.DetailsItemActivity
 import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
 import br.com.veronezitecnologia.pingatech.viewmodel.ListPingaViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -42,13 +45,13 @@ class FragmentHome : Fragment() {
         listPinga.layoutManager =  LinearLayoutManager(context)
 
         adapter = PingaAdapter(pingas, view.context, { pinga ->
-            val detailIntent = Intent(view.context, DetailActivity::class.java)
-            detailIntent.putExtra(pingaObj, "pinga")
+            val detailIntent = Intent(view.context, DetailsItemActivity::class.java)
+            pinga.resourceId = byteArrayOf()
+            detailIntent.putExtra(pingaObj, pinga)
             startActivity(detailIntent)
         })
 
         listPinga.adapter = adapter
-
     }
 
     private fun showData() {
@@ -59,6 +62,11 @@ class FragmentHome : Fragment() {
                 adapter?.setList(pingas!!)
                 listPinga.adapter?.notifyDataSetChanged()
             })
+    }
+
+    private fun convertImageDefault() : ByteArray  {
+        var convertDefault = BitmapFactory.decodeResource(context?.getResources(), R.drawable.barril)
+        return  ConvertBitmapUtils().getBytes(convertDefault)
     }
 
     companion object {

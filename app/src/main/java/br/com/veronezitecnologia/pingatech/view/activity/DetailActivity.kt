@@ -38,7 +38,6 @@ import java.util.*
 
 class DetailActivity : AppCompatActivity() {
 
-    private lateinit var mMap: GoogleMap
     val permissoesLocalizacao = listOf(
         Manifest.permission.ACCESS_FINE_LOCATION,
         Manifest.permission.WRITE_EXTERNAL_STORAGE,
@@ -49,16 +48,14 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var locationListener: LocationListener
     private var permissionWrite = false
 
-    companion object {
-        val pingaObj = "PINGA"
-    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        var pinga = intent.getStringExtra(pingaObj)
+//        var pinga = intent.getStringExtra(pingaObj)
 //        createDetail(pinga)
 
         PermissionUtils.validaPermissao(permissoesLocalizacao.toTypedArray(), this, 1)
@@ -92,7 +89,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun createDetail(pinga: PingaModel) {
-        image_detail.setImageDrawable(ContextCompat.getDrawable(this, pinga.resourceId))
+        //image_detail.setImageDrawable(ContextCompat.getDrawable(this, pinga.resourceId))
         name_value.text = pinga.name
         history_detail.text = pinga.city
     }

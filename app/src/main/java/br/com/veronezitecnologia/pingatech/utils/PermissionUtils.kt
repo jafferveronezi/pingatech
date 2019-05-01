@@ -1,5 +1,6 @@
 package br.com.veronezitecnologia.pingatech.utils
 
+import android.Manifest
 import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Build
@@ -24,4 +25,10 @@ object PermissionUtils {
         }
         return true
     }
+
+    fun listPermissions() = arrayOf(
+        Manifest.permission.ACCESS_FINE_LOCATION,
+        Manifest.permission.WRITE_EXTERNAL_STORAGE,
+        Manifest.permission.CALL_PHONE
+    )
 }

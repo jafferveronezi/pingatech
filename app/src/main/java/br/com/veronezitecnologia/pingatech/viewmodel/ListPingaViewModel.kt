@@ -19,4 +19,8 @@ class ListPingaViewModel(application: Application) : AndroidViewModel(applicatio
     private fun loadData() {
         pingas = bd.pingaDAO().lerPingas()
     }
+
+    private fun deleteData(pinga: PingaData) {
+        bd.pingaDAO().apagar(pinga)
+    }
 }

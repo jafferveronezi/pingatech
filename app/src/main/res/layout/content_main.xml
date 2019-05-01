@@ -62,7 +62,7 @@
                 android:theme="@style/ButtonTheme"
                 android:text="@string/shared"
                 android:layout_width="@dimen/default_240_dp"
-                android:layout_height="@dimen/default_46_dp"
+                android:layout_height="45dp"
                 android:id="@+id/compartilhar_button"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="@dimen/default_8_dp"
@@ -103,11 +103,10 @@
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/type_value" app:layout_constraintStart_toEndOf="@+id/type_detail_label"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintHorizontal_bias="0.0" android:layout_marginStart="8dp" tools:text="Ouro"
-                android:text="Ouro" android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/name_value"/>
+                android:id="@+id/type_value"
+                tools:text="Ouro"
+                android:text="Ouro"
+                tools:layout_editor_absoluteY="140dp" tools:layout_editor_absoluteX="126dp"/>
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

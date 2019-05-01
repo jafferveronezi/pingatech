@@ -19,6 +19,13 @@
     <string name="error_telephone">Informe o telefone do Alambique!</string>
     <string name="error_description">Informe uma descrição da Pinga!</string>
     <string name="register_ok">Cadastro efetuado!</string>
+    <string name="delete_ok">Pinga deletada com sucesso!</string>
+    <string name="info_permession_call">Sem permissão de acesso ao Telefone!</string>
+    <string name="info_permession_map">Sem permissão de acesso ao Mapa!</string>
+    <string name="info_permission_write">Sem perimssão de acesso a escrita!</string>
+    <string name="city_details">Cidade do  Alambique:</string>
+    <string name="year_details">Ano de Produção:</string>
+    <string name="type_details">Tipo da Pinga:</string>
 
     <string name="developer_app">Disciplina de Android da MBA de Desenvolvimento Mobile da FIAP.
         Daniel Silva- Jaffer - Leandro

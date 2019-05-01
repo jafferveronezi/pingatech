@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.widget.FrameLayout
 import br.com.veronezitecnologia.pingatech.R
+import br.com.veronezitecnologia.pingatech.utils.PermissionUtils
 import br.com.veronezitecnologia.pingatech.view.fragment.FragmentDashboard
 import br.com.veronezitecnologia.pingatech.view.fragment.FragmentHome
 import br.com.veronezitecnologia.pingatech.view.fragment.AboutFragment
@@ -26,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_about -> {
+                PermissionUtils.validaPermissao(PermissionUtils.listPermissions(), this, 1)
                 var fragment = AboutFragment()
                 addFragment(fragment)
                 return@OnNavigationItemSelectedListener true
