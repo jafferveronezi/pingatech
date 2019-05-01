@@ -16,7 +16,6 @@ import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaData
 import br.com.veronezitecnologia.pingatech.model.PingaModel
 import br.com.veronezitecnologia.pingatech.utils.ConvertBitmapUtils
-import br.com.veronezitecnologia.pingatech.view.activity.DetailActivity
 import br.com.veronezitecnologia.pingatech.view.activity.DetailsItemActivity
 import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
 import br.com.veronezitecnologia.pingatech.viewmodel.ListPingaViewModel

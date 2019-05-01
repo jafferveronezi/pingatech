@@ -17,7 +17,6 @@ import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaData
 import br.com.veronezitecnologia.pingatech.utils.PermissionUtils
 import kotlinx.android.synthetic.main.activity_details_item.*
-import kotlinx.android.synthetic.main.activity_main.*
 import java.io.ByteArrayOutputStream
 
 class DetailsItemActivity : AppCompatActivity() {

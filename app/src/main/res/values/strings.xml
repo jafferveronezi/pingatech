@@ -26,38 +26,12 @@
     <string name="city_details">Cidade do  Alambique:</string>
     <string name="year_details">Ano de Produção:</string>
     <string name="type_details">Tipo da Pinga:</string>
-
     <string name="developer_app">Disciplina de Android da MBA de Desenvolvimento Mobile da FIAP.
         Daniel Silva- Jaffer - Leandro
     </string>
     <string name="app_versao">v1.0.0</string>
     <string name="map_location">A pingatech está localizada aqui!</string>
     <string name="location">Localização:</string>
-
-    <string name="history">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu aliquam libero. Aenean
-        turpis velit, dapibus sodales posuere nec, rutrum vitae neque. In rhoncus neque et turpis feugiat, et volutpat
-        ligula euismod. Phasellus eleifend condimentum malesuada. Proin nec eleifend lacus, eget pellentesque quam. Duis
-        molestie, risus ut ornare lacinia, orci felis pellentesque ante, at dapibus enim tellus eget augue. Etiam
-        eleifend dolor maximus gravida dignissim. Pellentesque eu nibh ac urna rhoncus ultricies at sit amet neque. Sed
-        consectetur bibendum sapien, sit amet pulvinar elit finibus non. Proin non sagittis libero, eget convallis
-        ipsum.
-    </string>
-
-    <string name="large_text">
-        "Material is the metaphor.\n\n"
-
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
-        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
-        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
-        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
-        "flexibility of the material creates new affordances that supercede those in the physical "
-        "world, without breaking the rules of physics.\n"
-        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
-        "interact, and exist in space and in relation to each other. Realistic lighting shows "
-        "seams, divides space, and indicates moving parts.\n\n"
-    </string>
-    <string name="title_activity_detail_content">DetailContentActivity</string>
     <string name="title_activity_maps">Map</string>
 
 </resources>
