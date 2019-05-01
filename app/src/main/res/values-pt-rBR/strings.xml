@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">pingatech</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_about">Sobre</string>
+    <string name="title_detail">Detalhes</string>
+    <string name="shared">Compartilhar</string>
+    <string name="contact">Contato</string>
+    <string name="register">Cadastrar</string>
+    <string name="select_image">Selecione uma imagem</string>
+    <string name="type_detail_pinga">Tipo de Cachaça:</string>
+    <string name="manufacture_year_pinga">Ano de Produção:</string>
+    <string name="city_pinga">Cidade:</string>
+    <string name="description">Descrição:</string>
+    <string name="error_name">Informe o nome da Pinga!</string>
+    <string name="error_city">Informe a cidade do Alambique!</string>
+    <string name="error_manufacture_year">Informe a data de Produção!</string>
+    <string name="error_type">Informe o tipo da Pinga!</string>
+    <string name="error_telephone">Informe o telefone do Alambique!</string>
+    <string name="error_description">Informe uma descrição!</string>
+    <string name="register_ok">Cadastro efetuado!</string>
+    <string name="delete_ok">Pinga deletada com sucesso!</string>
+    <string name="info_permession_call">Sem permissão de acesso ao Telefone!</string>
+    <string name="info_permession_map">Sem permissão de acesso ao Mapa!</string>
+    <string name="info_permission_write">Sem perimssão de acesso a escrita!</string>
+    <string name="city_details">Cidade do  Alambique:</string>
+    <string name="year_details">Ano de Produção:</string>
+    <string name="type_details">Tipo da Pinga:</string>
+    <string name="developer_app">Disciplina de Android da MBA de Desenvolvimento Mobile da FIAP.
+        Daniel Silva- Jaffer - Leandro
+    </string>
+    <string name="app_versao">v1.0.0</string>
+    <string name="map_location">A pingatech está localizada aqui!</string>
+    <string name="location">Localização:</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

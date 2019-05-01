@@ -20,7 +20,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="@dimen/default_8_dp"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="@dimen/default_8_dp"/>
+                android:layout_marginStart="@dimen/default_8_dp" app:srcCompat="@drawable/barril"/>
 
         <Button
                 android:text="@string/select_image"
@@ -51,7 +51,7 @@
                     android:id="@+id/ed_name_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informe o nome"
+                    android:hint="@string/error_name"
                     android:layout_marginEnd="@dimen/default_16_dp"
                     android:layout_marginStart="@dimen/default_16_dp"/>
         </android.support.design.widget.TextInputLayout>
@@ -71,7 +71,7 @@
                     android:id="@+id/ed_city_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informe a cidade"
+                    android:hint="@string/error_city"
                     android:layout_marginStart="@dimen/default_16_dp"
                     android:layout_marginEnd="@dimen/default_16_dp"
                     android:layout_marginTop="@dimen/default_16_dp"/>
@@ -93,7 +93,8 @@
                     android:id="@+id/ed_manufacturingYear_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informe o Ano"
+                    android:inputType="number"
+                    android:hint="@string/error_manufacture_year"
                     android:layout_marginEnd="@dimen/default_16_dp"
                     android:layout_marginStart="@dimen/default_16_dp"
                     android:layout_marginTop="@dimen/default_16_dp"/>
@@ -115,7 +116,7 @@
                     android:id="@+id/ed_type_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Informe o tipo"
+                    android:hint="@string/error_type"
                     android:layout_marginStart="@dimen/default_16_dp"
                     android:layout_marginEnd="@dimen/default_16_dp"
                     android:layout_marginTop="@dimen/default_16_dp"/>
@@ -138,7 +139,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number|phone"
-                    android:hint="Informe o telefone"
+                    android:hint="@string/error_telephone"
                     android:layout_marginStart="@dimen/default_16_dp"
                     android:layout_marginEnd="@dimen/default_16_dp"
                     android:layout_marginTop="@dimen/default_16_dp"/>
@@ -160,7 +161,7 @@
                     android:id="@+id/ed_description_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Adicione uma descrição"
+                    android:hint="@string/error_description"
                     android:layout_marginTop="@dimen/default_16_dp"
                     android:layout_marginStart="@dimen/default_16_dp"
                     android:layout_marginEnd="@dimen/default_16_dp"/>

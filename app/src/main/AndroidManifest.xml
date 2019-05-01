@@ -2,10 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="br.com.veronezitecnologia.pingatech">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="ACCESS_COARSE/FINE_LOCATION"/>
+
+    <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true"/>
 
     <application
             android:allowBackup="true"
@@ -14,9 +18,31 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".view.activity.DetailsItemActivity"
+                  android:screenOrientation="portrait">
+        </activity>
+
+        <provider
+                android:name="android.support.v4.content.FileProvider"
+                android:authorities="com.example.android.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/file_paths"/>
+        </provider>
+
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/google_maps_key"/>
 
         <activity
+                android:name=".MapsActivity"
+                android:label="@string/title_activity_maps">
+        </activity>
+        <activity
                 android:name=".view.activity.SplashActivity"
+                android:screenOrientation="portrait"
                 android:theme="@style/FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -24,16 +50,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
-        <activity
-                android:name=".view.activity.DetailActivity"
-                android:label="@string/title_detail"
-                android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
         <activity
                 android:name=".view.activity.HomeActivity"
-                android:label="@string/app_name">
+                android:label="@string/app_name"
+                android:screenOrientation="portrait">
         </activity>
 
         <service android:name=".services.PingaMessagingService">

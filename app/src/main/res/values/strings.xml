@@ -2,45 +2,36 @@
     <string name="app_name">pingatech</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_about">Sobre</string>
-    <string name="title_detail">Detalhes</string>
-    <string name="shared">Compartilhar</string>
-    <string name="contact">Contato</string>
-    <string name="register">Cadastrar</string>
-    <string name="select_image">Selecione uma imagem</string>
-    <string name="type_detail_pinga">Tipo de Cachaça:</string>
-    <string name="manufacture_year_pinga">Ano de Produção:</string>
-    <string name="city_pinga">Cidade:</string>
-    <string name="description">Descrição:</string>
-
-    <string name="developer_app">Disciplina de Android da MBA de Desenvolvimento Mobile da FIAP.
-        Daniel Silva- Jaffer - Leandro
+    <string name="title_about">About</string>
+    <string name="title_detail">Detail</string>
+    <string name="shared">Shared</string>
+    <string name="contact">Contact</string>
+    <string name="register">Register</string>
+    <string name="select_image">Select an image</string>
+    <string name="type_detail_pinga">Type of Pinga:</string>
+    <string name="manufacture_year_pinga">Year of manufacture:</string>
+    <string name="city_pinga"> City:</string>
+    <string name="description">Description:</string>
+    <string name="error_name">Enter the name of Pinga!</string>
+    <string name="error_city">Tell the city of the Alambique!</string>
+    <string name="error_manufacture_year">Enter the date of production!</string>
+    <string name="error_type">Inform the Pinga type!</string>
+    <string name="error_telephone">Inform the Alambique phone!</string>
+    <string name="error_description">Please provide a description!</string>
+    <string name="register_ok">Registration effected!</string>
+    <string name="delete_ok">Ping successfully deleted!</string>
+    <string name="info_permession_call"> No permission to access the Telephone!</string>
+    <string name="info_permession_map"> Not allowed to access the Map!</string>
+    <string name="info_permission_write"> No access to writing!</string>
+    <string name="city_details">Alambique City:</string>
+    <string name="year_details"> Year of manufacture:</string>
+    <string name="type_details">Pinga Type:</string>
+    <string name="developer_app"> Android Discipline of the FIAP Mobile Development MBA.
+        Daniel Silva - Jaffer - Leandro
     </string>
     <string name="app_versao">v1.0.0</string>
-
-    <string name="history">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu aliquam libero. Aenean
-        turpis velit, dapibus sodales posuere nec, rutrum vitae neque. In rhoncus neque et turpis feugiat, et volutpat
-        ligula euismod. Phasellus eleifend condimentum malesuada. Proin nec eleifend lacus, eget pellentesque quam. Duis
-        molestie, risus ut ornare lacinia, orci felis pellentesque ante, at dapibus enim tellus eget augue. Etiam
-        eleifend dolor maximus gravida dignissim. Pellentesque eu nibh ac urna rhoncus ultricies at sit amet neque. Sed
-        consectetur bibendum sapien, sit amet pulvinar elit finibus non. Proin non sagittis libero, eget convallis
-        ipsum.
-    </string>
-
-    <string name="large_text">
-        "Material is the metaphor.\n\n"
-
-        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
-        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
-        "technologically advanced and open to imagination and magic.\n"
-        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
-        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
-        "flexibility of the material creates new affordances that supercede those in the physical "
-        "world, without breaking the rules of physics.\n"
-        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
-        "interact, and exist in space and in relation to each other. Realistic lighting shows "
-        "seams, divides space, and indicates moving parts.\n\n"
-    </string>
-    <string name="title_activity_detail_content">DetailContentActivity</string>
+    <string name="map_location">Pingatech is located here!</string>
+    <string name="location">Location:</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>

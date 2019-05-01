@@ -8,10 +8,12 @@ data class PingaModel(val resourceId: Int,
                       val city: String,
                       val manufacturingYear: String,
                       val type: String,
-                      val telephone: String ): Parcelable {
+                      val telephone: String,
+                      val description: String): Parcelable {
 
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
+        parcel.readString(),
         parcel.readString(),
         parcel.readString(),
         parcel.readString(),
