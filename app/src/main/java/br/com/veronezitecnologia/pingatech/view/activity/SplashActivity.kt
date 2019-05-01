@@ -15,12 +15,11 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-         showSplash()
+        showSplash()
     }
 
     private fun showLogin() {
-        val nextScreen = Intent(this@SplashActivity, HomeActivity::class.java)
+        val nextScreen = Intent(this@SplashActivity, LoginActivity::class.java)
         startActivity(nextScreen)
         finish()
     }

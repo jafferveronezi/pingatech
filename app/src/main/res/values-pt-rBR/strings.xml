@@ -34,4 +34,14 @@
     <string name="map_location">A pingatech está localizada aqui!</string>
     <string name="location">Localização:</string>
     <string name="title_activity_maps">Map</string>
+
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="criar_conta">Criar conta</string>
+    <string name="login">Login</string>
+    <string name="adicionar_conta">Adicionar Conta</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="error_account">Informe seu email e senha nos campos!</string>
 </resources>
