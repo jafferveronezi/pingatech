@@ -32,6 +32,11 @@ class PingaAdapter(var pingas: MutableList<PingaData>,
         return pingas.size
     }
 
+    fun removeAt(position: Int) {
+        pingas.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
     interface ClickListener {
         fun onClick(view: View, position: Int)
     }
