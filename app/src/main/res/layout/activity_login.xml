@@ -47,15 +47,17 @@
                           android:hint="@string/password"/>
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.v7.widget.AppCompatButton
+            <Button
+                    android:textColor="@color/colorAccent"
+                    android:theme="@style/ButtonTheme"
+                    android:background="@drawable/shape_button"
                     android:id="@+id/btLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_24_dp"
                     android:layout_marginBottom="@dimen/default_24_dp"
                     android:padding="@dimen/default_12_dp"
-                    android:text="@string/login"
-                    android:background="@drawable/black_button"/>
+                    android:text="@string/login" android:contentDescription="@string/login"/>
 
             <TextView android:id="@+id/btSignup"
                       android:layout_width="match_parent"
@@ -64,17 +66,8 @@
                       android:text="@string/criar_conta"
                       android:gravity="center"
                       android:textSize="@dimen/default_16_sp"
-                      android:padding="@dimen/default_8_dp"/>
-
-            <TextView
-                    android:id="@+id/btHack"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/default_24_dp"
-                    android:gravity="center"
-                    android:padding="@dimen/default_8_dp"
-                    android:text="HACKEAR"
-                    android:textSize="@dimen/default_16_sp" />
+                      android:padding="@dimen/default_8_dp" android:textStyle="bold"
+                      android:textColor="@color/colorAccent"/>
 
         </LinearLayout>
     </RelativeLayout>

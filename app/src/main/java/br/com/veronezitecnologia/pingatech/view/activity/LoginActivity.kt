@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
         //}
 
         btLogin.setOnClickListener {
-            if(inputLoginEmail.text.isEmpty() && inputLoginPassword.text.isEmpty()) {
+            if(inputLoginEmail.text.isEmpty() || inputLoginPassword.text.isEmpty()) {
                 Toast.makeText(this@LoginActivity,this.getString(R.string.error_account), Toast.LENGTH_LONG).show()
             } else {
                 mAuth.signInWithEmailAndPassword(
