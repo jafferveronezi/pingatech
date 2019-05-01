@@ -2,13 +2,11 @@ package br.com.veronezitecnologia.pingatech.view.fragment
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.AsyncTask
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.helper.ItemTouchHelper
@@ -19,12 +17,10 @@ import android.widget.Toast
 
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaData
-import br.com.veronezitecnologia.pingatech.model.PingaModel
 import br.com.veronezitecnologia.pingatech.repository.DataBasePinga
 import br.com.veronezitecnologia.pingatech.utils.ConvertBitmapUtils
 import br.com.veronezitecnologia.pingatech.view.activity.DetailsItemActivity
 import br.com.veronezitecnologia.pingatech.view.adapter.PingaAdapter
-import br.com.veronezitecnologia.pingatech.view.adapter.PingaViewHolder
 import br.com.veronezitecnologia.pingatech.viewmodel.ListPingaViewModel
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -61,6 +57,12 @@ class FragmentHome : Fragment() {
 
         listPinga.adapter = adapter
         itemTouchHelper.attachToRecyclerView(listPinga)
+
+        if((listPinga.adapter as PingaAdapter).pingas.isEmpty()){
+            text_list_empty.visibility = View.VISIBLE
+        } else {
+            text_list_empty.visibility = View.GONE
+        }
     }
 
     private fun showData() {
