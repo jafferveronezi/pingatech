@@ -4,9 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_about">About</string>
     <string name="title_detail">Detail</string>
-    <string name="shared">Shared</string>
+    <string name="shared">Share</string>
     <string name="contact">Contact</string>
-    <string name="register">Register</string>
+    <string name="register">Add</string>
     <string name="select_image">Select an image</string>
     <string name="type_detail_pinga">Type of Pinga:</string>
     <string name="manufacture_year_pinga">Year of manufacture:</string>
