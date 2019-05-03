@@ -176,7 +176,7 @@ class UpdateItemActivity : AppCompatActivity() {
         ed_type_register.setText(pinga.type)
         ed_telephone_register.setText(pinga.telephone)
         ed_description_register.setText(pinga.description)
-        imageView.setImageBitmap(ConvertBitmapUtils().getImage(convertImageDefault()))
+        imageView.setImageBitmap(ConvertBitmapUtils().convertStringToBitmap(pinga.resourceId!!))
     }
 
     private inner class UpdateAsyncTask internal
