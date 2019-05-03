@@ -9,7 +9,7 @@ import android.os.Parcelable
 class PingaData : Parcelable {
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
-    var resourceId: ByteArray = byteArrayOf()
+    var resourceId: String? = null
     var name: String? = null
     var city: String? = null
     var manufacturingYear: String? = null
@@ -19,7 +19,7 @@ class PingaData : Parcelable {
 
     constructor(parcel: Parcel) : this() {
         id = parcel.readInt()
-        resourceId = parcel.createByteArray()
+        resourceId = parcel.readString()
         name = parcel.readString()
         city = parcel.readString()
         manufacturingYear = parcel.readString()
@@ -31,7 +31,7 @@ class PingaData : Parcelable {
     constructor() {}
 
     constructor(
-        resourceId: ByteArray, name: String, city: String, manufacturingYear: String, type: String, telephone: String,
+        resourceId: String, name: String, city: String, manufacturingYear: String, type: String, telephone: String,
         description: String
     ) {
         this.resourceId = resourceId
@@ -45,7 +45,7 @@ class PingaData : Parcelable {
 
     constructor(
         id: Int,
-        resourceId: ByteArray,
+        resourceId: String,
         name: String,
         city: String,
         manufacturingYear: String,
@@ -64,7 +64,7 @@ class PingaData : Parcelable {
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)
-        parcel.writeByteArray(resourceId)
+        parcel.writeString(resourceId)
         parcel.writeString(name)
         parcel.writeString(city)
         parcel.writeString(manufacturingYear)

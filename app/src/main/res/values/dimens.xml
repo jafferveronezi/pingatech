@@ -21,9 +21,9 @@
     <dimen name="default_100_dp">100dp</dimen>
     <dimen name="default_150_dp">150dp</dimen>
     <dimen name="default_180_dp">180dp</dimen>
+    <dimen name="default_200_dp">200dp</dimen>
     <dimen name="default_240_dp">240dp</dimen>
     <dimen name="default_250_dp">250dp</dimen>
-    <dimen name="default_200_dp">200dp</dimen>
     <dimen name="default_300_dp">300dp</dimen>
     <dimen name="default_322_dp">322dp</dimen>
     <dimen name="default_346_dp">346dp</dimen>

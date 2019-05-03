@@ -42,6 +42,12 @@ class DetailsItemActivity : AppCompatActivity() {
                 Toast.makeText(this, this.getString(R.string.info_permission_write), Toast.LENGTH_LONG).show()
             }
         }
+
+        update_button.setOnClickListener {
+            val updateIntent = Intent(this, UpdateItemActivity::class.java)
+            updateIntent.putExtra(pingaObj, pinga)
+            startActivity(updateIntent)
+        }
     }
 
 

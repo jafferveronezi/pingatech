@@ -16,7 +16,7 @@ class PingaViewHolder(itemView: View) :
         typePinga.text = pinga.type
         manufacturingYearPinga.text = pinga.manufacturingYear
         cityPinga.text = pinga.city
-        imagePinga.setImageBitmap(ConvertBitmapUtils().getImage(pinga.resourceId))
+        imagePinga.setImageBitmap(ConvertBitmapUtils().convertStringToBitmap(pinga.resourceId!!))
 
         setOnClickListener { listerner(pinga) }
     }

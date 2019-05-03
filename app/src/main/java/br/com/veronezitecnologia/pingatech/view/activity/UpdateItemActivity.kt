@@ -1,34 +1,31 @@
-package br.com.veronezitecnologia.pingatech.view.fragment
+package br.com.veronezitecnologia.pingatech.view.activity
 
 import android.app.Activity
 import android.content.Context
-import android.os.AsyncTask
-import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
-import br.com.veronezitecnologia.pingatech.model.PingaData
-import br.com.veronezitecnologia.pingatech.repository.DataBasePinga
-import kotlinx.android.synthetic.main.fragment_register.*
-import kotlinx.android.synthetic.main.content_register.*
-import android.provider.MediaStore
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.AsyncTask
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
 import android.os.Environment
+import android.provider.MediaStore
 import android.support.v4.content.FileProvider
+import android.widget.ProgressBar
+import android.widget.Toast
 import br.com.veronezitecnologia.pingatech.R
+import br.com.veronezitecnologia.pingatech.model.PingaData
+import br.com.veronezitecnologia.pingatech.repository.DataBasePinga
 import br.com.veronezitecnologia.pingatech.utils.ConvertBitmapUtils
+import kotlinx.android.synthetic.main.activity_update_item.*
+import kotlinx.android.synthetic.main.content_register.*
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.*
 
-
-class FragmentDashboard : Fragment() {
+class UpdateItemActivity : AppCompatActivity() {
 
     val REQUEST_TAKE_PHOTO = 1
 
@@ -38,19 +35,14 @@ class FragmentDashboard : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
+        setContentView(R.layout.activity_update_item)
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        super.onCreateView(inflater, container, savedInstanceState)
-        var rootView = inflater!!.inflate(R.layout.fragment_register, container, false)
-        return rootView
-    }
+        var pinga = intent.getParcelableExtra<PingaData>(pingaObj)
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        fillRegister(pinga)
 
         photo_button.setOnClickListener {
-            dispatchTakePictureIntent(view.context)
+            dispatchTakePictureIntent(this)
         }
 
         register_button.setOnClickListener {
@@ -84,7 +76,7 @@ class FragmentDashboard : Fragment() {
     @Throws(IOException::class)
     private fun createImageFile(): File {
         val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val storageDir: File = context?.getExternalFilesDir(Environment.DIRECTORY_PICTURES)!!
+        val storageDir: File = this.getExternalFilesDir(Environment.DIRECTORY_PICTURES)!!
         return File.createTempFile(
             "JPEG_${timeStamp}_",
             ".jpg",
@@ -94,51 +86,51 @@ class FragmentDashboard : Fragment() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            val imageBitmap = data.extras.get("data") as Bitmap
-            imageView.setImageBitmap(imageBitmap)
-            imageByte = ConvertBitmapUtils().getBytes(imageBitmap)
+            val imageBitmap = data?.extras?.get("data") as Bitmap
+            imageView.setImageBitmap(imageBitmap!!)
+            imageByte = ConvertBitmapUtils().getBytes(imageBitmap!!)
         }
     }
 
     private fun convertImageDefault() : ByteArray  {
-        var convertDefault = BitmapFactory.decodeResource(context?.getResources(), R.drawable.barril)
-       return  ConvertBitmapUtils().getBytes(convertDefault)
+        var convertDefault = BitmapFactory.decodeResource(this.getResources(), R.drawable.barril)
+        return  ConvertBitmapUtils().getBytes(convertDefault)
     }
 
     private fun valideInputsRegister(): Boolean {
         var valide = true
 
         if ("".equals(ed_name_register.text.toString())) {
-            ed_name_register.setError(context?.getString(R.string.error_name))
+            ed_name_register.setError(this.getString(R.string.error_name))
             valide = false
         }
         if ("".equals(ed_city_register.text.toString())) {
-            ed_city_register.setError(context?.getString(R.string.error_city))
+            ed_city_register.setError(this.getString(R.string.error_city))
             valide = false
         }
         if ("".equals(ed_manufacturingYear_register.text.toString())) {
-            ed_manufacturingYear_register.setError(context?.getString(R.string.error_manufacture_year))
+            ed_manufacturingYear_register.setError(this.getString(R.string.error_manufacture_year))
             valide = false
         }
         if ("".equals(ed_type_register.text.toString())) {
-            ed_type_register.setError(context?.getString(R.string.error_type))
+            ed_type_register.setError(this.getString(R.string.error_type))
             valide = false
         }
         if ("".equals(ed_telephone_register.text.toString())) {
-            ed_telephone_register.setError(context?.getString(R.string.error_telephone))
+            ed_telephone_register.setError(this.getString(R.string.error_telephone))
             valide = false
         }
         if ("".equals(ed_description_register.text.toString())) {
-            ed_description_register.setError(context?.getString(R.string.error_description))
+            ed_description_register.setError(this.getString(R.string.error_description))
             valide = false
         }
         return valide
     }
 
     private fun saveDatabase() {
-        val db = DataBasePinga.getDatabase(context?.applicationContext!!)
+        val db = DataBasePinga.getDatabase(this)
 
 //        var imagePinga = imageByte
         var imagePinga = ConvertBitmapUtils().convertByteArrayToBase64(imageByte)
@@ -158,9 +150,9 @@ class FragmentDashboard : Fragment() {
             pinga.type != "" && pinga.telephone != "" && pinga.description != ""
         ) {
 
-            InsertAsyncTask(db!!).execute(pinga)
+            UpdateAsyncTask(db!!).execute(pinga)
 
-            Toast.makeText(context?.applicationContext!!, this.getString(R.string.register_ok), Toast.LENGTH_LONG)
+            Toast.makeText(this, this.getString(R.string.register_ok), Toast.LENGTH_LONG)
                 .show()
 
             clearRegister()
@@ -177,12 +169,36 @@ class FragmentDashboard : Fragment() {
         imageView.setImageBitmap(ConvertBitmapUtils().getImage(convertImageDefault()))
     }
 
-    private inner class InsertAsyncTask internal
+    fun fillRegister(pinga: PingaData) {
+        ed_name_register.setText(pinga.name)
+        ed_city_register.setText(pinga.city)
+        ed_manufacturingYear_register.setText(pinga.manufacturingYear)
+        ed_type_register.setText(pinga.type)
+        ed_telephone_register.setText(pinga.telephone)
+        ed_description_register.setText(pinga.description)
+        imageView.setImageBitmap(ConvertBitmapUtils().getImage(convertImageDefault()))
+    }
+
+    private inner class UpdateAsyncTask internal
     constructor(appDatabase: DataBasePinga) : AsyncTask<PingaData, Void, String>() {
         private val db: DataBasePinga = appDatabase
 
         override fun doInBackground(vararg params: PingaData): String {
-            db.pingaDAO().inserir(params[0])
+            db.pingaDAO().atualizar(params[0])
+            return ""
+        }
+    }
+
+    companion object {
+        val pingaObj = "PINGA"
+    }
+
+    private inner class SearchAsyncTask internal
+    constructor(appDatabase: DataBasePinga) : AsyncTask<PingaData, Void, String>() {
+        private val db: DataBasePinga = appDatabase
+
+        override fun doInBackground(vararg params: PingaData): String {
+            db.pingaDAO().buscarPor(params[0].id)
             return ""
         }
     }

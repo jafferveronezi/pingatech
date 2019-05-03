@@ -50,7 +50,6 @@ class FragmentHome : Fragment() {
 
         adapter = PingaAdapter(pingas, view.context, { pinga ->
             val detailIntent = Intent(view.context, DetailsItemActivity::class.java)
-            pinga.resourceId = byteArrayOf()
             detailIntent.putExtra(pingaObj, pinga)
             startActivity(detailIntent)
         })
