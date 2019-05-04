@@ -28,8 +28,6 @@ class DetailsItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_item)
 
-        var pingaResult: PingaData? = null
-
         var idPinga = intent.getIntExtra(pingaObj, -1)
 
         val db = DataBasePinga.getDatabase(this)
@@ -49,7 +47,7 @@ class DetailsItemActivity : AppCompatActivity() {
 
         update_button.setOnClickListener {
             val updateIntent = Intent(this, UpdateItemActivity::class.java)
-//            updateIntent.putExtra(pingaObj, pinga)
+            updateIntent.putExtra(pingaObj, pinga.id)
             startActivity(updateIntent)
         }
     }
@@ -126,5 +124,9 @@ class DetailsItemActivity : AppCompatActivity() {
 
     companion object {
         val pingaObj = "PINGA"
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

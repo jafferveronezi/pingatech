@@ -53,6 +53,7 @@ class PingaData : Parcelable {
         telephone: String,
         description: String
     ) {
+        this.id = id
         this.resourceId = resourceId
         this.name = name
         this.city = city

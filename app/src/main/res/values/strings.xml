@@ -46,5 +46,6 @@
     <string name="empty_list">Your Pingas list is empty! :)</string>
     <string name="edit">Edit</string>
     <string name="telephone">Telephone:</string>
+    <string name="update">Update</string>
 
 </resources>

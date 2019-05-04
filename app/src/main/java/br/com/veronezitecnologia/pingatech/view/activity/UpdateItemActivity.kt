@@ -32,18 +32,24 @@ class UpdateItemActivity : AppCompatActivity() {
     var currentPhotoPath: String = ""
     val REQUEST_IMAGE_CAPTURE = 1
     var imageByte: ByteArray = byteArrayOf()
+    var idPinga: Int = -1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_update_item)
 
-        var pinga = intent.getParcelableExtra<PingaData>(pingaObj)
+        idPinga = intent.getIntExtra(pingaObj, -1)
+
+        val db = DataBasePinga.getDatabase(this)
+        var pinga = SearchAsyncTask(db!!).execute(idPinga).get()
 
         fillRegister(pinga)
 
         photo_button.setOnClickListener {
             dispatchTakePictureIntent(this)
         }
+
+        register_button.setText(this.getString(R.string.update))
 
         register_button.setOnClickListener {
             if (valideInputsRegister()) {
@@ -141,32 +147,20 @@ class UpdateItemActivity : AppCompatActivity() {
         }
 
         val pinga = PingaData(
-            imagePinga, ed_name_register.text.toString(), ed_city_register.text.toString(),
+            idPinga, imagePinga, ed_name_register.text.toString(), ed_city_register.text.toString(),
             ed_manufacturingYear_register.text.toString(), ed_type_register.text.toString(),
             ed_telephone_register.text.toString(), ed_description_register.text.toString()
         )
 
         if (pinga.name != "" && pinga.city != "" && pinga.manufacturingYear != "" &&
-            pinga.type != "" && pinga.telephone != "" && pinga.description != ""
+            pinga.type != "" && pinga.telephone != "" && pinga.description != "" && pinga.id != -1
         ) {
 
             UpdateAsyncTask(db!!).execute(pinga)
 
             Toast.makeText(this, this.getString(R.string.register_ok), Toast.LENGTH_LONG)
                 .show()
-
-            clearRegister()
         }
-    }
-
-    fun clearRegister() {
-        ed_name_register.text = null
-        ed_city_register.text = null
-        ed_manufacturingYear_register.text = null
-        ed_type_register.text = null
-        ed_telephone_register.text = null
-        ed_description_register.text = null
-        imageView.setImageBitmap(ConvertBitmapUtils().getImage(convertImageDefault()))
     }
 
     fun fillRegister(pinga: PingaData) {
@@ -189,17 +183,23 @@ class UpdateItemActivity : AppCompatActivity() {
         }
     }
 
+    private inner class SearchAsyncTask internal
+    constructor(appDatabase: DataBasePinga) : AsyncTask<Int, Void, PingaData>() {
+        private val db: DataBasePinga = appDatabase
+
+        override fun doInBackground(vararg p0: Int?): PingaData {
+            return db.pingaDAO().buscarPor(p0[0]!!)
+        }
+    }
+
     companion object {
         val pingaObj = "PINGA"
     }
 
-    private inner class SearchAsyncTask internal
-    constructor(appDatabase: DataBasePinga) : AsyncTask<PingaData, Void, String>() {
-        private val db: DataBasePinga = appDatabase
-
-        override fun doInBackground(vararg params: PingaData): String {
-            db.pingaDAO().buscarPor(params[0].id)
-            return ""
-        }
+    override fun onBackPressed() {
+        val detailIntent = Intent(this, DetailsItemActivity::class.java)
+        detailIntent.putExtra(pingaObj, idPinga)
+        startActivity(detailIntent)
+        super.onBackPressed()
     }
 }
