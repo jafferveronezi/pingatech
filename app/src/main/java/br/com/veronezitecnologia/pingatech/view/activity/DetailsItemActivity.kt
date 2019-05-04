@@ -8,6 +8,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.net.Uri
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
@@ -15,6 +16,8 @@ import android.view.View
 import android.widget.Toast
 import br.com.veronezitecnologia.pingatech.R
 import br.com.veronezitecnologia.pingatech.model.PingaData
+import br.com.veronezitecnologia.pingatech.repository.DataBasePinga
+import br.com.veronezitecnologia.pingatech.utils.ConvertBitmapUtils
 import br.com.veronezitecnologia.pingatech.utils.PermissionUtils
 import kotlinx.android.synthetic.main.activity_details_item.*
 import java.io.ByteArrayOutputStream
@@ -25,15 +28,16 @@ class DetailsItemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_item)
 
-        var pinga = intent.getParcelableExtra<PingaData>(pingaObj)
+        var pingaResult: PingaData? = null
+
+        var idPinga = intent.getIntExtra(pingaObj, -1)
+
+        val db = DataBasePinga.getDatabase(this)
+        var pinga = SearchAsyncTask(db!!).execute(idPinga).get()
+
+        fillRegister(pinga)
 
         PermissionUtils.validaPermissao(PermissionUtils.listPermissions(), this, 1)
-
-        title_detail.text = pinga.name
-        city_detail.text = pinga.city
-        manufactureYear_detail.text = pinga.manufacturingYear
-        type_detail.text = pinga.type
-        description_detail.text = pinga.description
 
         shared_button.setOnClickListener {
             if (permissionWrite()) {
@@ -45,7 +49,7 @@ class DetailsItemActivity : AppCompatActivity() {
 
         update_button.setOnClickListener {
             val updateIntent = Intent(this, UpdateItemActivity::class.java)
-            updateIntent.putExtra(pingaObj, pinga)
+//            updateIntent.putExtra(pingaObj, pinga)
             startActivity(updateIntent)
         }
     }
@@ -99,6 +103,25 @@ class DetailsItemActivity : AppCompatActivity() {
 
         var path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null)
         return Uri.parse(path)
+    }
+
+    fun fillRegister(pinga: PingaData) {
+        title_detail.setText(pinga.name)
+        city_detail.setText(pinga.city)
+        manufactureYear_detail.setText(pinga.manufacturingYear)
+        type_detail.setText(pinga.type)
+        telephone_detail.setText(pinga.telephone)
+        description_detail.setText(pinga.description)
+        imageView.setImageBitmap(ConvertBitmapUtils().convertStringToBitmap(pinga.resourceId!!))
+    }
+
+    private inner class SearchAsyncTask internal
+    constructor(appDatabase: DataBasePinga) : AsyncTask<Int, Void, PingaData>() {
+        private val db: DataBasePinga = appDatabase
+
+        override fun doInBackground(vararg p0: Int?): PingaData {
+            return db.pingaDAO().buscarPor(p0[0]!!)
+        }
     }
 
     companion object {
