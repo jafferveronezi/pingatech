@@ -49,6 +49,7 @@ class DetailsItemActivity : AppCompatActivity() {
             val updateIntent = Intent(this, UpdateItemActivity::class.java)
             updateIntent.putExtra(pingaObj, pinga.id)
             startActivity(updateIntent)
+            this.finish()
         }
     }
 
