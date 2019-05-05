@@ -14,8 +14,10 @@
     <dimen name="default_12_dp">12dp</dimen>
     <dimen name="default_16_dp">16dp</dimen>
     <dimen name="default_24_dp">24dp</dimen>
+    <dimen name="default_32_dp">32dp</dimen>
     <dimen name="default_46_dp">46dp</dimen>
     <dimen name="defalut_51_dp">51dp</dimen>
+    <dimen name="default_56_dp">56dp</dimen>
     <dimen name="default_86_dp">86dp</dimen>
     <dimen name="default_96_dp">96dp</dimen>
     <dimen name="default_100_dp">100dp</dimen>
@@ -31,6 +33,7 @@
 
     <!-- Default sp -->
     <dimen name="defaut_30_sp">30sp</dimen>
+    <dimen name="default_22_sp">22dp</dimen>
     <dimen name="default_20_sp">20sp</dimen>
     <dimen name="default_18_sp">18sp</dimen>
     <dimen name="default_16_sp">16sp</dimen>

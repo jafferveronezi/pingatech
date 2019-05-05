@@ -8,7 +8,7 @@
             android:text="@string/empty_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/text_list_empty" android:textStyle="bold"
-            tools:text="@string/empty_list" android:textSize="24sp" android:textAlignment="viewStart"
+            tools:text="@string/empty_list" android:textSize="@dimen/default_24_sp" android:textAlignment="viewStart"
             android:textColor="@color/colorAccent" android:visibility="gone"
             android:layout_margin="@dimen/default_16_dp" android:contentDescription="@string/empty_list"/>
     <android.support.v7.widget.RecyclerView
