@@ -15,7 +15,7 @@
     <string name="description">Descrição:</string>
     <string name="error_name">Informe o nome da Pinga!</string>
     <string name="error_city">Informe a cidade do Alambique!</string>
-    <string name="error_manufacture_year">Informe a data de Produção!</string>
+    <string name="error_manufacture_year">Informe o ano de Produção!</string>
     <string name="error_type">Informe o tipo da Pinga!</string>
     <string name="error_telephone">Informe o telefone do Alambique!</string>
     <string name="error_description">Informe uma descrição!</string>

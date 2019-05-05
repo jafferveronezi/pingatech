@@ -14,7 +14,7 @@
     <string name="description">Description:</string>
     <string name="error_name">Enter the name of Pinga!</string>
     <string name="error_city">Tell the city of the Alambique!</string>
-    <string name="error_manufacture_year">Enter the date of production!</string>
+    <string name="error_manufacture_year">Enter the year of production!</string>
     <string name="error_type">Inform the Pinga type!</string>
     <string name="error_telephone">Inform the Alambique phone!</string>
     <string name="error_description">Please provide a description!</string>
