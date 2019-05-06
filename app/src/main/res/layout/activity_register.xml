@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/default_56_dp"
+            android:paddingLeft="@dimen/default_24_dp"
+            android:paddingRight="@dimen/default_24_dp">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:text="Novo Usuário"
+                  android:textSize="@dimen/default_22_sp"
+                  android:textStyle="bold"
+                  android:gravity="center" android:textColor="@color/colorAccent"/>
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8_dp"
+                android:layout_marginBottom="@dimen/default_8_dp">
+            <EditText android:id="@+id/inputName"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:inputType="textEmailAddress"
+                      android:hint="Name"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8_dp"
+                android:layout_marginBottom="@dimen/default_8_dp">
+            <EditText android:id="@+id/inputEmail"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:inputType="textEmailAddress"
+                      android:hint="Email"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8_dp"
+                android:layout_marginBottom="@dimen/default_8_dp">
+            <EditText android:id="@+id/inputPassword"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:inputType="textPassword"
+                      android:hint="Password"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_8_dp"
+                android:layout_marginBottom="@dimen/default_8_dp">
+            <EditText android:id="@+id/inputPhone"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:inputType="textEmailAddress"
+                      android:hint="Phone"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+                android:textColor="@color/colorAccent"
+                android:theme="@style/ButtonTheme"
+                android:background="@drawable/shape_button"
+                android:id="@+id/btCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_24_dp"
+                android:layout_marginBottom="@dimen/default_24_dp"
+                android:padding="@dimen/default_12_dp"
+                android:text="@string/adicionar_conta"/>
+
+    </LinearLayout>
+</ScrollView>

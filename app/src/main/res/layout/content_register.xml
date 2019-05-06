@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="@+id/city_register"
+            app:layout_constraintBottom_toTopOf="@+id/city_register">
+
+        <ImageView
+                android:layout_width="@dimen/default_150_dp"
+                android:layout_height="@dimen/default_150_dp"
+                tools:srcCompat="@drawable/barril"
+                android:id="@+id/imageView"
+                android:layout_marginTop="@dimen/default_8_dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_8_dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_8_dp"
+                app:srcCompat="@drawable/barril"/>
+
+        <Button
+                android:text="@string/select_image"
+                android:layout_width="@dimen/default_200_dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/photo_button"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_8_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_8_dp"
+                android:layout_marginTop="@dimen/default_8_dp"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                android:textColor="@color/colorAccent"
+                android:background="@drawable/shape_button"/>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/name_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_16_dp"
+                app:layout_constraintTop_toBottomOf="@+id/photo_button"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_16_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_16_dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_name_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/error_name"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/city_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_16_dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_16_dp"
+                android:layout_marginTop="@dimen/default_16_dp"
+                app:layout_constraintTop_toBottomOf="@+id/name_register">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_city_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/error_city"
+                    android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/manufacturingYear_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_16_dp"
+                app:layout_constraintTop_toBottomOf="@+id/city_register"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_16_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_16_dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_manufacturingYear_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:hint="@string/error_manufacture_year"
+                    android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/type_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_16_dp"
+                app:layout_constraintTop_toBottomOf="@+id/manufacturingYear_register"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_16_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_16_dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_type_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/error_type"
+                    android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/telephone_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_16_dp"
+                app:layout_constraintTop_toBottomOf="@+id/type_register"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_16_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_16_dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_telephone_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number|phone"
+                    android:hint="@string/error_telephone"
+                    android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+                android:id="@+id/description_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_16_dp"
+                app:layout_constraintTop_toBottomOf="@+id/telephone_register"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_16_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/default_16_dp">
+
+            <android.support.design.widget.TextInputEditText
+                    android:id="@+id/ed_description_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/error_description"
+                    android:layout_marginTop="@dimen/default_16_dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+                android:text="@string/register"
+                android:layout_width="@dimen/default_240_dp"
+                android:layout_height="@dimen/default_46_dp"
+                android:id="@+id/register_button"
+                android:layout_marginTop="@dimen/default_16_dp"
+                app:layout_constraintTop_toBottomOf="@+id/description_register"
+                android:layout_marginEnd="@dimen/default_16_dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="@dimen/default_16_dp"
+                android:textColor="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/default_16_dp"
+                android:background="@drawable/shape_button"/>
+
+
+    </android.support.constraint.ConstraintLayout>
+
+</merge>

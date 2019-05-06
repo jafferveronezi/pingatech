@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+            android:text="@string/empty_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/text_list_empty" android:textStyle="bold"
+            tools:text="@string/empty_list" android:textSize="@dimen/default_24_sp" android:textAlignment="viewStart"
+            android:textColor="@color/colorAccent" android:visibility="gone"
+            android:layout_margin="@dimen/default_16_dp" android:contentDescription="@string/empty_list"/>
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/listPinga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/meu_jogo_item"/>
+
+
+</FrameLayout>

@@ -2,5 +2,50 @@
     <string name="app_name">pingatech</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_about">About</string>
+    <string name="title_detail">Detail</string>
+    <string name="shared">Share</string>
+    <string name="contact">Contact</string>
+    <string name="register">Add</string>
+    <string name="select_image">Select an image</string>
+    <string name="type_detail_pinga">Type of Pinga:</string>
+    <string name="manufacture_year_pinga">Year of manufacture:</string>
+    <string name="city_pinga">City:</string>
+    <string name="description">Description:</string>
+    <string name="error_name">Enter the name of Pinga!</string>
+    <string name="error_city">Tell the city of the Alambique!</string>
+    <string name="error_manufacture_year">Enter the year of production!</string>
+    <string name="error_type">Inform the Pinga type!</string>
+    <string name="error_telephone">Inform the Alambique phone!</string>
+    <string name="error_description">Please provide a description!</string>
+    <string name="register_ok">Registration effected!</string>
+    <string name="delete_ok">Ping successfully deleted!</string>
+    <string name="info_permession_call">No permission to access the Telephone!</string>
+    <string name="info_permession_map">Not allowed to access the Map!</string>
+    <string name="info_permission_write">No access to writing!</string>
+    <string name="city_details">Alambique City:</string>
+    <string name="year_details">Year of manufacture:</string>
+    <string name="type_details">Pinga Type:</string>
+    <string name="developer_app">Android Discipline of the FIAP Mobile Development MBA.
+        Daniel Silva - Jaffer - Leandro
+    </string>
+    <string name="app_versao">v1.0.0</string>
+    <string name="map_location">Pingatech is located here!</string>
+    <string name="location">Location:</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="criar_conta">Create an Account</string>
+    <string name="login">Login</string>
+    <string name="adicionar_conta">Add Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_account">Enter your email and password in the fields!</string>
+    <string name="list">List</string>
+    <string name="empty_list">Your Pingas list is empty! :)</string>
+    <string name="edit">Edit</string>
+    <string name="telephone">Telephone:</string>
+    <string name="update">Update</string>
+
 </resources>

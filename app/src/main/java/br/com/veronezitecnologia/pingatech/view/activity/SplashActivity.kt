@@ -1,4 +1,4 @@
-package br.com.veronezitecnologia.pingatech.view
+package br.com.veronezitecnologia.pingatech.view.activity
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -10,16 +10,16 @@ import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
-    private val TEMPO_AGUARDO_SPLASHSCREEN = 3500L//3500L
+    private val TEMPO_AGUARDO_SPLASHSCREEN = 3500L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-
-         showSplash()
+        showSplash()
+    }
 
     private fun showLogin() {
-        val nextScreen = Intent(this@SplashActivity, HomeActivity::class.java)
+        val nextScreen = Intent(this@SplashActivity, LoginActivity::class.java)
         startActivity(nextScreen)
         finish()
     }

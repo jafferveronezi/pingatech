@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "411277970810",
+    "firebase_url": "https://pingatech-92c9f.firebaseio.com",
+    "project_id": "pingatech-92c9f",
+    "storage_bucket": "pingatech-92c9f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411277970810:android:77ae8d6ba96425ae",
+        "android_client_info": {
+          "package_name": "br.com.veronezitecnologia.pingatech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411277970810-8bdf9fb80mnqbmgr6obgmbd50v0pg1sa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.veronezitecnologia.pingatech",
+            "certificate_hash": "2670eed2d67946ff1a33d6f232d549839fd9bd77"
+          }
+        },
+        {
+          "client_id": "411277970810-egernlimiamf79m9ng44lp4tcnjlf9qp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBToLoGEUhSk7KjPoKbDhIx5smF1L49Vpc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411277970810-egernlimiamf79m9ng44lp4tcnjlf9qp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

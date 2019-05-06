@@ -2,23 +2,44 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
 
     <!-- Default dp -->
+    <dimen name="default_0_dp">0dp</dimen>
+    <dimen name="default_4_dp">4dp</dimen>
+    <dimen name="default_5_dp">5dp</dimen>
     <dimen name="default_8_dp">8dp</dimen>
     <dimen name="default_12_dp">12dp</dimen>
     <dimen name="default_16_dp">16dp</dimen>
     <dimen name="default_24_dp">24dp</dimen>
+    <dimen name="default_32_dp">32dp</dimen>
+    <dimen name="default_46_dp">46dp</dimen>
     <dimen name="defalut_51_dp">51dp</dimen>
+    <dimen name="default_56_dp">56dp</dimen>
+    <dimen name="default_86_dp">86dp</dimen>
+    <dimen name="default_96_dp">96dp</dimen>
     <dimen name="default_100_dp">100dp</dimen>
     <dimen name="default_150_dp">150dp</dimen>
     <dimen name="default_180_dp">180dp</dimen>
-    <dimen name="default_250_dp">250dp</dimen>
     <dimen name="default_200_dp">200dp</dimen>
+    <dimen name="default_240_dp">240dp</dimen>
+    <dimen name="default_250_dp">250dp</dimen>
+    <dimen name="default_300_dp">300dp</dimen>
+    <dimen name="default_322_dp">322dp</dimen>
     <dimen name="default_346_dp">346dp</dimen>
+    <dimen name="default_435_dp">435dp</dimen>
 
     <!-- Default sp -->
+    <dimen name="defaut_30_sp">30sp</dimen>
+    <dimen name="default_22_sp">22dp</dimen>
+    <dimen name="default_20_sp">20sp</dimen>
+    <dimen name="default_18_sp">18sp</dimen>
     <dimen name="default_16_sp">16sp</dimen>
     <dimen name="default_24_sp">24sp</dimen>
-    <dimen name="default_14_sp">12sp</dimen>
-    <dimen name="default_0_dp">0dp</dimen>
+    <dimen name="default_14_sp">14sp</dimen>
+    <dimen name="default_12_sp">12sp</dimen>
+
+
 </resources>
